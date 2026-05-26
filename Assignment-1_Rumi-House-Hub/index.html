@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags: charset, viewport, description, keywords -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Rumi House Hub — student societies, events, and campus engagement at Namal University Mianwali."
+    />
+    <meta
+      name="keywords"
+      content="Rumi House, Namal University, societies, events, student portal, registration"
+    />
+    <!-- Page Title -->
+    <title>Rumi House Hub – Societies &amp; Events | Namal University</title>
+    <!-- External CSS (Task 3: external stylesheet) -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Accessibility: skip-navigation link for screen readers -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- ════════════════════════════════════════════════════════════
+         HEADER + NAV  (Semantic + Flexbox – Task 1, Task 4)
+    ════════════════════════════════════════════════════════════ -->
+    <header id="main-header">
+      <div class="container header-bar">
+
+        <!-- Brand / Logo: image with alt text (Task 1 – images; Task 2 – accessibility) -->
+        <div class="brand" aria-label="Rumi House Hub home">
+          <img
+            class="brand-logo"
+            src="media/logo.svg"
+            alt="Rumi House Hub logo — purple hexagon with house icon"
+            width="44"
+            height="44"
+          />
+          <div class="brand-text">
+            <p class="brand-kicker">Namal University</p>
+            <!-- h1 is the top-level heading for the entire page (Task 1) -->
+            <h1 class="brand-title">Rumi House Hub</h1>
+            <p style="font-size: 0.72rem; font-style: italic; opacity: 0.85; margin: 0; line-height: 1.2; max-width: 250px;">“Rumi House is Namal’s hub for student societies, creativity and collaboration.” <a href="https://www.instagram.com/rumihouse_namal/" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">[instagram]</a></p>
+          </div>
+        </div>
+
+        <!-- Primary navigation: Flexbox row of anchor links (Task 1 – links; Task 4 – Flexbox nav) -->
+        <nav aria-label="Primary navigation">
+          <ul class="nav-list" id="primary-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#societies">Societies</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#lists">How to Join</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
+    <!-- ════════════════════════════════════════════════════════════
+         MAIN CONTENT (Task 1 – semantic)
+    ════════════════════════════════════════════════════════════ -->
+    <main id="main-content">
+
+      <!-- ── Hero Section (Flexbox + Grid layout – Task 4) ───────── -->
+      <section id="home" class="hero-section" aria-labelledby="hero-heading">
+        <div class="container hero-grid">
+
+          <div class="hero-copy">
+            <!-- h2 as section heading under h1 (proper heading hierarchy) -->
+            <h2 id="hero-heading">Discover, Connect, and Lead in Rumi House.</h2>
+            <p class="lead" style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 0.75rem;">
+              <strong>Rumi House is the central office for all student societies and clubs at Namal University, headed by the Chief Patron.</strong> It provides a dedicated space where society representatives can hold meetings, rehearsals, planning sessions and discussions before events, helping them turn ideas into well-organized activities that represent their clubs and the university. <a href="https://namal.edu.pk/student-societies" target="_blank" rel="noopener" style="text-decoration: underline;">[namal.edu]</a>
+            </p>
+            <p class="lead" style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 0.75rem;">
+              <strong>The Rumi House team monitors the progress of each society and club, collaborates with them on events, and also initiates its own sports and adventure activities to positively engage both faculty and staff.</strong> <a href="https://namal.edu.pk/workshops-and-seminars/namal-university-faculty-engage-in-adventure-activities-2364" target="_blank" rel="noopener" style="text-decoration: underline;">[namal.edu]</a>
+            </p>
+            <p class="lead" style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">
+              <strong>An editorial board under Rumi House regularly publishes the Rumi Newsletter, documenting major events, visits and society activities across the academic year and sharing highlights from life at Namal.</strong> <a href="https://namal.edu.pk/ckEditorImages/uploads/societies/Rumi_Newsletter_04.pdf" target="_blank" rel="noopener" style="text-decoration: underline;">[namal.edu]</a>
+            </p>
+            <!-- Unordered list used in hero (Task 2 – lists) -->
+            <ul class="hero-bullets">
+              <li>Society highlights in a 3×3 CSS Grid showcase</li>
+              <li>Upcoming events table with spotlight articles</li>
+              <li>Accessible membership &amp; event registration form</li>
+              <li>Audio &amp; video multimedia elements</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="btn" href="#register" id="cta-register">Register Now</a>
+              <a class="btn btn-ghost" href="#events" id="cta-events">View Events</a>
+            </div>
+          </div>
+
+          <!-- figure + figcaption (semantic HTML – Task 1) -->
+          <figure class="hero-figure">
+            <img
+              class="hero-image"
+              src="media/hero.svg"
+              alt="Illustration of diverse students collaborating on a campus project with laptops and books"
+              width="720"
+              height="420"
+            />
+            <figcaption>
+              Built with pure HTML &amp; an external CSS file. Demonstrates
+              Flexbox, CSS Grid, and responsive media queries.
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <!-- ── About Section (paragraphs, headings, links – Task 1) ── -->
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+          <h2 id="about-title">About Rumi House</h2>
+          <p style="margin-bottom: 1rem;">
+            <strong>Student societies at Namal give students structured platforms to collaborate, innovate and give back to the university community.</strong> <a href="https://friendsofnamalusa.com/std-detail" target="_blank" rel="noopener" style="text-decoration: underline;">[friendsofnamalusa]</a>
+          </p>
+          <p style="margin-bottom: 1rem;">
+            Through Rumi House, these societies receive administrative support, space and guidance so they can organize talks, competitions, cultural festivals, sports events, community service projects and literary activities that enrich campus life. <a href="https://namal.edu.pk/news-events/?per_page=24" target="_blank" rel="noopener" style="text-decoration: underline;">[namal.edu]</a>
+          </p>
+          <p style="margin-bottom: 1rem;">
+            <strong>Rumi House also oversees eligibility criteria and shortlisting processes for society executive bodies, defines the roles of patrons and the Patron‑in‑Chief, and can suspend memberships when policies are violated, ensuring societies remain active, accountable and inclusive.</strong> <a href="https://namal.edu.pk/student-societies" target="_blank" rel="noopener" style="text-decoration: underline;">[namal.edu]</a>
+          </p>
+          <p>
+            This page is created for <em>WAD Assignment 1</em> and demonstrates
+            semantic HTML5 structure, accessible forms, tables, ordered/unordered
+            lists, audio/video multimedia, and a fully responsive CSS layout built
+            with Flexbox, CSS Grid, and media queries.
+          </p>
+          <!-- Practical use of an anchor link within text (Task 1 – links) -->
+          <p>
+            Ready to get involved?
+            <a href="#register">Fill out the registration form</a> below.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── Society Highlights: CSS Grid 3×3 (Task 4) ─────────── -->
+      <section id="societies" class="section" aria-labelledby="society-title">
+        <div class="container">
+          <h2 id="society-title">Society Highlights</h2>
+          <p class="muted">
+            A <strong>CSS Grid 3×3</strong> layout showcasing nine active
+            societies at Rumi House.
+          </p>
+
+          <!-- grid-3x3: CSS Grid with repeat(3,1fr) – Task 4 -->
+          <div class="grid-3x3" role="list" id="society-grid">
+
+            <!-- Each card is an <article> (semantic – Task 1) -->
+            <article class="card" role="listitem" id="card-nec" style="display: flex; flex-direction: column;">
+              <h3 style="margin-bottom: 0.5rem;">Namal Environmental Club (NEC)</h3>
+              <p style="margin-bottom: 1rem;">Runs plantation drives on and around campus, leads clean-up and waste-management campaigns, and promotes recycling and sustainable practices to support the idea of a “Green Namal.” <a href="https://friendsofnamalusa.com/std-detail" target="_blank" rel="noopener" style="text-decoration: underline;">[friendsofnamalusa]</a></p>
+              <div style="margin-top: auto;"><p class="tag" style="margin-bottom: 0;">#Environment</p></div>
+            </article>
+
+            <article class="card" role="listitem" id="card-nic" style="display: flex; flex-direction: column;">
+              <h3 style="margin-bottom: 0.5rem;">Namal Idea Club (NIC)</h3>
+              <p style="margin-bottom: 1rem;">Provides a platform for students to explore new ideas, problem-solving and innovation, especially around entrepreneurship and creative projects. <a href="https://friendsofnamalusa.com/std-detail" target="_blank" rel="noopener" style="text-decoration: underline;">[friendsofnamalusa]</a></p>
+              <div style="margin-top: auto;"><p class="tag" style="margin-bottom: 0;">#Innovation</p></div>
+            </article>
+
+            <article class="card" role="listitem" id="card-nssi" style="display: flex; flex-direction: column;">
+              <h3 style="margin-bottom: 0.5rem;">Namal Society for Social Impact (NSSI)</h3>
+              <p style="margin-bottom: 1rem;">Focuses on community service and social-impact initiatives, encouraging Namalites to design and execute projects that benefit local communities and address real social challenges. <a href="https://friendsofnamalusa.com/std-detail" target="_blank" rel="noopener" style="text-decoration: underline;">[friendsofnamalusa]</a></p>
+              <div style="margin-top: auto;"><p class="tag" style="margin-bottom: 0;">#SocialImpact</p></div>
+            </article>
+
+            <article class="card" role="listitem" id="card-lds" style="display: flex; flex-direction: column;">
+              <h3 style="margin-bottom: 0.5rem;">Namal Literary &amp; Debating Society (LDS)</h3>
+              <p style="margin-bottom: 1rem;">Promotes literature, reading and creative writing, and helps aspiring writers discover and polish their talents by publishing their work and organizing workshops and seminars. <a href="https://namal.edu.pk/student-societies/namal-literary-debating-society-lds-2673" target="_blank" rel="noopener" style="text-decoration: underline;">[namal.edu]</a></p>
+              <div style="margin-top: auto;"><p class="tag" style="margin-bottom: 0;">#Literature</p></div>
+            </article>
+
+            <article class="card" role="listitem" id="card-nsac" style="display: flex; flex-direction: column;">
+              <h3 style="margin-bottom: 0.5rem;">Namal Sports &amp; Adventure Club (NSAC)</h3>
+              <p style="margin-bottom: 1rem;">Ensures that all students, regardless of gender, take part in physical drills and recreational sports through inter-house matches and competitions, helping balance academics with physical wellbeing. <a href="https://namal.edu.pk/student-societies/namal-sports-and-adventure-club-nsac-3650" target="_blank" rel="noopener" style="text-decoration: underline;">[namal.edu]</a></p>
+              <div style="margin-top: auto;"><p class="tag" style="margin-bottom: 0;">#Sports</p></div>
+            </article>
+
+            <article class="card" role="listitem" id="card-ndc" style="display: flex; flex-direction: column;">
+              <h3 style="margin-bottom: 0.5rem;">Namal Dramatic Club (NDC)</h3>
+              <p style="margin-bottom: 1rem;">Focuses on theatrical performances, scriptwriting, and acting, giving students a creative outlet to express narratives, host plays, and entertain the campus community through expressive arts.</p>
+              <div style="margin-top: auto;"><p class="tag" style="margin-bottom: 0;">#Drama</p></div>
+            </article>
+
+            <article class="card" role="listitem" id="card-von" style="display: flex; flex-direction: column;">
+              <h3 style="margin-bottom: 0.5rem;">Namal Media Club (VoN)</h3>
+              <p style="margin-bottom: 1rem;">Acts as the “eyes and ears” of campus life by covering events on and off campus and promoting a positive image of Namal on social media, teaching photography and videography. <a href="https://namal.edu.pk/student-societies/namal-media-club-5927" target="_blank" rel="noopener" style="text-decoration: underline;">[namal.edu]</a></p>
+              <div style="margin-top: auto;"><p class="tag" style="margin-bottom: 0;">#Media</p></div>
+            </article>
+
+            <article class="card" role="listitem" id="card-sds" style="display: flex; flex-direction: column;">
+              <h3 style="margin-bottom: 0.5rem;">Skills Development Society (SDS)</h3>
+              <p style="margin-bottom: 1rem;">Dedicated to enhancing professional and technical skills through practical workshops, training sessions, and peer-to-peer learning opportunities aimed at career readiness.</p>
+              <div style="margin-top: auto;"><p class="tag" style="margin-bottom: 0;">#Skills</p></div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Events Section: Table + Articles (Task 1, Task 2) ───── -->
+      <section id="events" class="section" aria-labelledby="events-title">
+        <div class="container">
+          <h2 id="events-title">Upcoming Events</h2>
+          <p class="muted" style="margin-bottom: 0.75rem;">
+            <strong>The Rumi House Editorial Board regularly publishes the Rumi Newsletter, which documents major events, study visits, competitions and society activities throughout the academic year.</strong> <a href="https://namal.edu.pk/ckEditorImages/uploads/societies/Rumi_Newsletter_04.pdf" target="_blank" rel="noopener" style="text-decoration: underline;">[namal.edu]</a>
+          </p>
+          <p class="muted">
+            Recent editions have highlighted everything from Sports Gala prize distributions and TEDx-style talk sessions to faculty adventure trips and scholarship awareness events, giving a curated snapshot of what is happening across campus. <a href="https://namal.edu.pk/news-events/?per_page=24" target="_blank" rel="noopener" style="text-decoration: underline;">[namal.edu]</a>
+          </p>
+
+          <!-- Flexbox two-column layout – Task 4 -->
+          <div class="two-col" id="events-cols">
+
+            <!-- TABLE (Task 2: ≥3 rows, ≥3 cols, header row) -->
+            <div class="panel">
+              <h3>Event Schedule</h3>
+              <table class="table" id="events-table" aria-label="Upcoming campus events">
+                <thead>
+                  <tr>
+                    <th scope="col">Event</th>
+                    <th scope="col">Society</th>
+                    <th scope="col">Venue</th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Prize Distribution Ceremony – Sports Gala</td>
+                    <td>Sports &amp; Adv. / Rumi House</td>
+                    <td>Sports Ground</td>
+                    <!-- <time> for machine-readable dates (semantic bonus) -->
+                    <td><time datetime="2026-04-05">5 Apr</time></td>
+                  </tr>
+                  <tr>
+                    <td>TEDx-Styled Talks @ Namal</td>
+                    <td>Idea Club / LDS</td>
+                    <td>Seminar Hall</td>
+                    <td><time datetime="2026-04-12">12 Apr</time></td>
+                  </tr>
+                  <tr>
+                    <td>Faculty Adventure Trip – Trekking &amp; Kayaking</td>
+                    <td>Rumi House</td>
+                    <td>Off-campus</td>
+                    <td><time datetime="2026-04-20">20 Apr</time></td>
+                  </tr>
+                  <tr>
+                    <td>Environmental Clean-up Campaign</td>
+                    <td>Namal Environmental Club</td>
+                    <td>Campus Periphery</td>
+                    <td><time datetime="2026-04-27">27 Apr</time></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Spotlight articles (semantic <article> – Task 1) -->
+            <div class="panel">
+              <h3>Event Highlights</h3>
+
+              <article class="spotlight" id="spotlight-sports">
+                <h4>Event Highlight: Sports Gala</h4>
+                <p>
+                  Join the annual Sports Gala organized by the Sports &amp; Adventure Club, featuring inter-house matches, physical drills, and a grand prize distribution ceremony.
+                </p>
+                <ul class="mini-list">
+                  <li>Inter-house competitions</li>
+                  <li>Athletics tournaments</li>
+                  <li>Medal ceremony</li>
+                </ul>
+              </article>
+
+              <article class="spotlight" id="spotlight-ideas">
+                <h4>Event Highlight: TEDx-Styled Talks</h4>
+                <p>
+                  Discover new ideas, problem-solving strategies and innovation stories from peers and industry mentors, brought to you by the Namal Idea Club and LDS.
+                </p>
+                <p class="tag">Open to all students!</p>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Lists Section (Task 2: ordered + unordered, ≥5 items) ── -->
+      <section id="lists" class="section" aria-labelledby="lists-title">
+        <div class="container">
+          <h2 id="lists-title">How to Register &amp; Why Join</h2>
+
+          <div class="two-col" id="lists-cols">
+
+            <!-- Ordered list (Task 2) -->
+            <div class="panel">
+              <h3>Steps to Register (Ordered List)</h3>
+              <ol class="list" id="register-steps">
+                <li>Open Rumi House Hub in your browser</li>
+                <li>Browse upcoming events and society listings</li>
+                <li>Select the society or event you like</li>
+                <li>Fill in the membership / registration form below</li>
+                <li>Upload your profile picture (optional)</li>
+                <li>Click <strong>Submit</strong> and check your email for confirmation</li>
+              </ol>
+            </div>
+
+            <!-- Unordered list (Task 2) -->
+            <div class="panel">
+              <h3>Benefits of Joining (Unordered List)</h3>
+              <ul class="list" id="benefits-list">
+                <li>Networking with seniors, peers, and industry professionals</li>
+                <li>Leadership and teamwork experience on real projects</li>
+                <li>Skill development through focused workshops</li>
+                <li>Confidence through stage, speaking, and pitching opportunities</li>
+                <li>Official certificates and portfolio-worthy achievements</li>
+                <li>Lasting friendships and vibrant community at campus events</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Registration Form (Task 2: all input types + accessibility) ── -->
+      <section id="register" class="section" aria-labelledby="register-title">
+        <div class="container">
+          <h2 id="register-title">Membership / Event Registration Form</h2>
+          <p class="muted">
+            All fields with <span class="required-star">*</span> are required.
+            Labels are linked via <code>for</code>/<code>id</code> for full accessibility.
+          </p>
+
+          <!-- form: action, method, novalidate kept false for browser native validation -->
+          <form class="form" id="registration-form" action="#" method="post">
+
+            <!-- ── Fieldset 1: Basic Information (text, email, password) ── -->
+            <fieldset class="form-fieldset" id="fieldset-basic">
+              <legend>Basic Information</legend>
+
+              <div class="form-row">
+                <!-- label + input[type=text] -->
+                <label for="studentName">Student Name <span class="required-star">*</span></label>
+                <input
+                  id="studentName"
+                  name="studentName"
+                  type="text"
+                  placeholder="e.g., Ayesha Khan"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="form-row">
+                <!-- label + input[type=email] -->
+                <label for="namalEmail">Namal Email <span class="required-star">*</span></label>
+                <input
+                  id="namalEmail"
+                  name="namalEmail"
+                  type="email"
+                  placeholder="e.g., bs2022xxx@namal.edu.pk"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-row">
+                <!-- label + input[type=password] -->
+                <label for="dummyPassword">Portal Password <span class="required-star">*</span></label>
+                <input
+                  id="dummyPassword"
+                  name="dummyPassword"
+                  type="password"
+                  placeholder="Create a password"
+                  autocomplete="new-password"
+                  required
+                />
+              </div>
+            </fieldset>
+
+            <!-- ── Fieldset 2: Interests (checkboxes) ─────────────── -->
+            <fieldset class="form-fieldset" id="fieldset-interests">
+              <legend>Interests (Checkbox)</legend>
+
+              <div class="check-grid" role="group" aria-label="Select your society interests">
+                <!-- input[type=checkbox] wrapped in label (implicit label) -->
+                <label class="check">
+                  <input type="checkbox" name="interest" value="tech" />
+                  Tech
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="interest" value="sports" />
+                  Sports
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="interest" value="cultural" />
+                  Cultural
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="interest" value="debate" />
+                  Debate
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="interest" value="volunteer" />
+                  Volunteer
+                </label>
+                <label class="check">
+                  <input type="checkbox" name="interest" value="design" />
+                  Design
+                </label>
+              </div>
+
+              <!-- Standalone checkbox with explicit for/id -->
+              <div class="agree-row">
+                <input id="agree" name="agree" type="checkbox" required />
+                <label for="agree">
+                  I agree to the society rules and code of conduct. <span class="required-star">*</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- ── Fieldset 3: Role (radio buttons) ──────────────── -->
+            <fieldset class="form-fieldset" id="fieldset-role">
+              <legend>Preferred Role (Radio)</legend>
+              <div class="radio-row" role="radiogroup" aria-label="Select your role">
+                <!-- input[type=radio] wrapped in label -->
+                <label class="check">
+                  <input type="radio" name="role" value="member" checked /> Member
+                </label>
+                <label class="check">
+                  <input type="radio" name="role" value="executive" /> Executive
+                </label>
+                <label class="check">
+                  <input type="radio" name="role" value="volunteer" /> Volunteer
+                </label>
+                <label class="check">
+                  <input type="radio" name="role" value="observer" /> Observer
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- ── Fieldset 4: Date + File Upload ─────────────────── -->
+            <fieldset class="form-fieldset" id="fieldset-date-file">
+              <legend>Date &amp; File Upload</legend>
+
+              <div class="form-row">
+                <!-- input[type=date] with explicit label -->
+                <label for="joinDate">Preferred Join Date <span class="required-star">*</span></label>
+                <input id="joinDate" name="joinDate" type="date" required />
+              </div>
+
+              <div class="form-row">
+                <!-- input[type=file] with explicit label -->
+                <label for="profileFile">Profile Picture (File Upload)</label>
+                <input
+                  id="profileFile"
+                  name="profileFile"
+                  type="file"
+                  accept="image/*"
+                />
+              </div>
+            </fieldset>
+
+            <!-- Submit + Reset buttons (type=submit demonstrated) -->
+            <div class="form-actions">
+              <button class="btn" type="submit" id="btn-submit">Submit Membership Request</button>
+              <button class="btn btn-ghost" type="reset" id="btn-reset">Reset Form</button>
+            </div>
+
+          </form>
+        </div>
+      </section>
+
+      <!-- ── Multimedia Section (Task 2: audio + video) ─────────── -->
+      <section id="multimedia" class="section" aria-labelledby="media-title">
+        <div class="container">
+          <h2 id="media-title">Multimedia</h2>
+          <p class="muted">
+            Demonstrates <code>&lt;audio&gt;</code> and
+            <code>&lt;video&gt;</code> elements with
+            <code>controls</code> attribute and browser-fallback text.
+          </p>
+
+          <div class="two-col" id="media-cols">
+
+            <!-- Audio element (Task 2: multimedia) -->
+            <div class="panel" id="panel-audio">
+              <h3>Rumi House Intro (Audio)</h3>
+              <!-- audio controls – accessible with keyboard; WAV fallback for full browser support -->
+              <audio controls id="audio-intro" aria-label="Rumi House Hub introduction audio">
+                <source src="media/rumi-intro.wav" type="audio/wav" />
+                <source src="media/rumi-intro.mp3" type="audio/mpeg" />
+                Your browser does not support the audio element. Please upgrade your browser.
+              </audio>
+              <p class="note">
+                A short musical tone generated for this demonstration.
+              </p>
+            </div>
+
+            <!-- Video element (Task 2: multimedia) -->
+            <div class="panel" id="panel-video">
+              <h3>Campus Promo (Video)</h3>
+              <!-- video controls – width kept responsive via CSS; poster adds accessibility context -->
+              <video
+                controls
+                id="video-promo"
+                width="640"
+                aria-label="Rumi House campus promotional video"
+              >
+                <source src="media/rumi-tour.mp4" type="video/mp4" />
+                Your browser does not support the video element. Please upgrade your browser.
+              </video>
+              <p class="note">
+                An animated gradient clip generated for this demonstration.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!-- /main -->
+
+    <!-- ════════════════════════════════════════════════════════════
+         FOOTER (Flexbox columns – Task 1 semantic, Task 4 Flexbox)
+    ════════════════════════════════════════════════════════════ -->
+    <footer id="contact" class="footer" role="contentinfo">
+      <div class="container footer-grid">
+
+        <section class="footer-col" aria-labelledby="footer-contact">
+          <h2 id="footer-contact">Contact</h2>
+          <!-- address: semantic element for contact info -->
+          <address>
+            <p>Rumi House Hub (Mock Portal)<br />Namal University, Mianwali</p>
+            <p>
+              Email:
+              <a href="mailto:rumi.house@namal.edu.pk">rumi.house@namal.edu.pk</a>
+            </p>
+          </address>
+        </section>
+
+        <section class="footer-col" aria-labelledby="footer-links">
+          <h2 id="footer-links">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="#societies">Societies</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#lists">How to Join</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#home">Back to Top ↑</a></li>
+          </ul>
+        </section>
+
+        <section class="footer-col" aria-labelledby="footer-note">
+          <h2 id="footer-note">About This Page</h2>
+          <p>
+            WAD Assignment 1 — built with pure <strong>HTML5</strong> and an
+            external <strong>CSS</strong> file. No frameworks used.
+          </p>
+          <p class="copyright">
+            &copy; 2026 Rumi House Hub. All rights reserved.
+          </p>
+        </section>
+
+      </div>
+    </footer>
+
+  </body>
+</html>

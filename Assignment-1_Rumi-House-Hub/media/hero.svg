@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-label="Students collaborating illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#111b33"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="720" height="420" rx="22" fill="url(#bg)"/>
+  <circle cx="590" cy="110" r="95" fill="url(#g)" opacity="0.25"/>
+  <circle cx="120" cy="90" r="70" fill="#7c5cff" opacity="0.18"/>
+  <circle cx="170" cy="290" r="100" fill="#22c55e" opacity="0.14"/>
+  <rect x="70" y="120" width="580" height="230" rx="18" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.14)"/>
+  <rect x="110" y="160" width="220" height="150" rx="14" fill="rgba(124,92,255,0.16)" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="360" y="160" width="250" height="70" rx="14" fill="rgba(34,197,94,0.16)" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="360" y="240" width="250" height="70" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)"/>
+  <text x="120" y="210" font-family="system-ui,Segoe UI,Arial" font-size="20" fill="rgba(231,237,247,0.92)">Societies</text>
+  <text x="120" y="242" font-family="system-ui,Segoe UI,Arial" font-size="14" fill="rgba(231,237,247,0.72)">Tech • Sports • Cultural</text>
+  <text x="375" y="203" font-family="system-ui,Segoe UI,Arial" font-size="20" fill="rgba(231,237,247,0.92)">Upcoming Events</text>
+  <text x="375" y="276" font-family="system-ui,Segoe UI,Arial" font-size="18" fill="rgba(231,237,247,0.86)">Register in minutes</text>
+  <text x="375" y="300" font-family="system-ui,Segoe UI,Arial" font-size="13" fill="rgba(231,237,247,0.66)">Accessible form + table + media</text>
+</svg>
+

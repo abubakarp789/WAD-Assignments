@@ -1,0 +1,736 @@
+/* ============================================================
+   WAD Assignment 1 – External CSS Stylesheet
+   Project : Rumi House Hub
+   Author  : Abu Bakar (NUM-BSCS-2022-41)
+   Topics  : Box Model, Flexbox, CSS Grid, Media Queries,
+             Selectors (element, class, ID, grouping, pseudo)
+   ============================================================ */
+
+/* ── CSS Custom Properties (design tokens) ──────────────────────── */
+:root {
+  --bg         : #0b1220;
+  --panel      : rgba(255, 255, 255, 0.06);
+  --panel-2    : rgba(255, 255, 255, 0.09);
+  --text       : #e7edf7;
+  --muted      : rgba(231, 237, 247, 0.72);
+  --brand      : #7c5cff;
+  --brand-2    : #22c55e;
+  --border     : rgba(255, 255, 255, 0.14);
+  --shadow     : 0 12px 30px rgba(0, 0, 0, 0.35);
+  --radius     : 16px;
+  --transition : 0.22s ease;
+}
+
+/* ============================================================
+   TASK 3 – CSS SELECTORS
+   ============================================================ */
+
+/* ── Element Selectors ───────────────────────────────────────────── */
+* {
+  /* Box Model: box-sizing ensures padding+border are included in width/height */
+  box-sizing: border-box;
+  margin    : 0;
+  padding   : 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Element selector – sets global font, colour, and background */
+  font-family : system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height : 1.6;
+  color       : var(--text);
+  background  :
+    radial-gradient(1200px 700px at 15% 10%, rgba(124, 92, 255, 0.22), transparent 60%),
+    radial-gradient(900px  650px at 90% 20%, rgba( 34, 197,  94, 0.16), transparent 55%),
+    var(--bg);
+}
+
+/* Grouping selector – shared rules for all headings */
+h1, h2, h3, h4 {
+  line-height : 1.2;
+  margin-bottom: 0.6rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color          : inherit;
+  text-decoration: none;
+  transition     : color var(--transition);
+}
+
+ul, ol {
+  list-style-position: outside;
+}
+
+/* Element selector – responsive images */
+img, video {
+  max-width: 100%;   /* width  – CSS Box Model */
+  height   : auto;   /* height – CSS Box Model */
+  display  : block;
+}
+
+audio, video {
+  width: 100%;
+}
+
+/* ── Pseudo-element: decorative first-line styling ───────────────── */
+p::first-line {
+  letter-spacing: 0.015em;
+}
+
+/* ── Pseudo-element: ::before used on section headings for accent ── */
+.section h2::before,
+.hero-section h2::before {
+  content    : "";
+  display    : inline-block;
+  width      : 6px;           /* width  – Box Model */
+  height     : 0.9em;         /* height – Box Model */
+  margin-right: 0.55rem;      /* margin – Box Model */
+  border-radius: 3px;
+  background  : linear-gradient(180deg, var(--brand), var(--brand-2));
+  vertical-align: middle;
+}
+
+/* ── Pseudo-class: link states ───────────────────────────────────── */
+a:hover {
+  color          : var(--brand-2);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline       : 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius : 4px;
+}
+
+/* ── Pseudo-class: table row striping ───────────────────────────── */
+.table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Pseudo-class: input focus state ────────────────────────────── */
+input:focus {
+  outline       : 2px solid rgba(124, 92, 255, 0.65);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+
+/* Class selector – centred max-width container */
+.container {
+  width  : min(1140px, calc(100% - 2rem));   /* width – Box Model */
+  margin : 0 auto;                            /* margin – Box Model */
+}
+
+/* Class selector – standard section vertical spacing */
+.section {
+  padding: 4rem 0;   /* padding – Box Model */
+}
+
+/* ── Helper classes (class selectors) ───────────────────────────── */
+.muted         { color: var(--muted); }
+.required-star { color: #f87171; font-weight: 700; }
+
+.note {
+  font-size: 0.93rem;
+  color    : var(--muted);
+}
+
+.tag {
+  display      : inline-block;
+  padding      : 0.15rem 0.6rem;   /* padding – Box Model */
+  border       : 1px solid var(--border); /* border – Box Model */
+  border-radius: 999px;
+  background   : rgba(255, 255, 255, 0.04);
+  color        : rgba(231, 237, 247, 0.88);
+  font-size    : 0.88rem;
+}
+
+/* ── Accessibility: skip navigation link ────────────────────────── */
+.skip-link {
+  position : absolute;
+  left     : -999px;
+  top      : 10px;
+  padding  : 0.75rem 1.2rem;   /* padding – Box Model */
+  background: #fff;
+  color    : #111;
+  border-radius: 10px;
+  z-index  : 999;
+  font-weight: 600;
+}
+
+/* Pseudo-class: show skip link on keyboard focus */
+.skip-link:focus {
+  left: 10px;
+}
+
+/* ============================================================
+   TASK 3 – BOX MODEL DEMONSTRATION
+   (margin · padding · border · width · height · box-sizing)
+   ============================================================ */
+
+/* .box-model-demo explicitly labels all five Box Model properties */
+.card {
+  /* margin  – space outside the element */
+  margin-bottom: 0;
+  /* padding – space inside the element */
+  padding      : 1.2rem;          /* padding – Box Model */
+  /* border  – visible edge */
+  border       : 1px solid rgba(255, 255, 255, 0.12);  /* border – Box Model */
+  border-radius: var(--radius);
+  /* width   – horizontal size (inherits 100% of parent grid cell) */
+  width        : 100%;            /* width – Box Model */
+  /* height  – minimum vertical size */
+  min-height   : 148px;           /* height – Box Model */
+  /* box-sizing already applied via * { box-sizing: border-box } */
+  background   : var(--panel);
+  box-shadow   : var(--shadow);
+  transition   : transform var(--transition), box-shadow var(--transition);
+}
+
+/* Pseudo-class: card hover lift effect */
+.card:hover {
+  transform : translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.card p {
+  color: rgba(231, 237, 247, 0.82);
+}
+
+/* .panel shares box model structure */
+.panel {
+  padding      : 1.25rem;         /* padding – Box Model */
+  border       : 1px solid rgba(255, 255, 255, 0.12); /* border – Box Model */
+  border-radius: var(--radius);
+  width        : 100%;            /* width – Box Model */
+  background   : var(--panel);
+  box-shadow   : var(--shadow);
+}
+
+.spotlight {
+  padding      : 1rem;            /* padding – Box Model */
+  border       : 1px solid rgba(255, 255, 255, 0.1); /* border – Box Model */
+  border-radius: 14px;
+  background   : rgba(255, 255, 255, 0.04);
+  margin-bottom: 0.9rem;          /* margin – Box Model */
+}
+
+/* ============================================================
+   ID SELECTOR – Main Header (sticky nav)
+   ============================================================ */
+#main-header {
+  position       : sticky;
+  top            : 0;
+  z-index        : 50;
+  backdrop-filter: blur(12px);
+  background     : rgba(11, 18, 32, 0.72);
+  border-bottom  : 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================================
+   TASK 4 – FLEXBOX LAYOUTS
+   ============================================================ */
+
+/* Flexbox: header bar – brand on left, nav on right */
+.header-bar {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  gap            : 1rem;
+  padding        : 0.9rem 0;   /* padding – Box Model */
+}
+
+/* Brand / logo area */
+.brand {
+  display    : flex;
+  align-items: center;
+  gap        : 0.75rem;
+  min-width  : 220px;           /* width – Box Model */
+}
+
+.brand-logo {
+  border-radius: 12px;
+  border       : 1px solid var(--border); /* border – Box Model */
+  background   : rgba(255, 255, 255, 0.03);
+  box-shadow   : var(--shadow);
+  /* width + height already set via HTML attributes */
+}
+
+.brand-kicker {
+  font-size: 0.88rem;
+  color    : var(--muted);
+}
+
+.brand-title {
+  font-size: 1.2rem;
+}
+
+/* Flexbox: navigation list (Task 4 – Flexbox nav) */
+.nav-list {
+  list-style     : none;
+  display        : flex;
+  flex-wrap      : wrap;
+  align-items    : center;
+  justify-content: flex-end;
+  gap            : 0.3rem;
+}
+
+.nav-list a {
+  display      : inline-block;
+  padding      : 0.55rem 0.9rem;   /* padding – Box Model */
+  border-radius: 999px;
+  border       : 1px solid transparent; /* border – Box Model */
+  color        : rgba(231, 237, 247, 0.92);
+  transition   : background var(--transition), border-color var(--transition);
+}
+
+/* Pseudo-class: nav link hover */
+.nav-list a:hover {
+  text-decoration: none;
+  border-color   : rgba(255, 255, 255, 0.18);
+  background     : rgba(255, 255, 255, 0.06);
+}
+
+/* ── Hero: CSS Grid two-column (Task 4 – Grid in hero) ──────────── */
+.hero-section {
+  padding: 2.5rem 0 3.5rem;   /* padding – Box Model */
+}
+
+.hero-grid {
+  display              : grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap                  : 2rem;
+  align-items          : center;
+}
+
+.hero-copy h2 {
+  font-size    : 2rem;
+  margin-bottom: 0.75rem;   /* margin – Box Model */
+}
+
+.lead {
+  font-size: 1.05rem;
+  color    : rgba(231, 237, 247, 0.86);
+}
+
+.hero-bullets {
+  margin       : 0 0 1.25rem;   /* margin – Box Model */
+  padding-left : 1.3rem;        /* padding – Box Model */
+  color        : rgba(231, 237, 247, 0.86);
+}
+
+.hero-bullets li {
+  margin-bottom: 0.35rem;   /* margin – Box Model */
+}
+
+/* Flexbox: CTA button row */
+.hero-actions {
+  display  : flex;
+  gap      : 0.8rem;
+  flex-wrap: wrap;
+}
+
+.hero-figure {
+  margin       : 0;
+  padding      : 1rem;          /* padding – Box Model */
+  border       : 1px solid rgba(255, 255, 255, 0.12); /* border – Box Model */
+  border-radius: var(--radius);
+  background   : rgba(255, 255, 255, 0.04);
+  box-shadow   : var(--shadow);
+}
+
+.hero-figure figcaption {
+  margin-top: 0.7rem;   /* margin – Box Model */
+  font-size : 0.93rem;
+  color     : var(--muted);
+}
+
+.hero-image {
+  border-radius: 14px;
+  border       : 1px solid rgba(255, 255, 255, 0.1); /* border – Box Model */
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────── */
+.btn {
+  display        : inline-flex;
+  align-items    : center;
+  justify-content: center;
+  padding        : 0.72rem 1.1rem;  /* padding – Box Model */
+  border-radius  : 12px;
+  border         : 1px solid rgba(255, 255, 255, 0.14); /* border – Box Model */
+  background     : linear-gradient(135deg,
+                     rgba(124, 92, 255, 0.95),
+                     rgba(34, 197, 94, 0.75));
+  color       : #07101e;
+  font-weight : 700;
+  box-shadow  : var(--shadow);
+  transition  : filter var(--transition), transform var(--transition);
+  cursor      : pointer;
+}
+
+/* Pseudo-class: button hover */
+.btn:hover {
+  filter         : brightness(1.08);
+  transform      : translateY(-2px);
+  text-decoration: none;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  color     : rgba(231, 237, 247, 0.92);
+}
+
+/* Pseudo-class: ghost button hover */
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Flexbox: two-column content layout (Task 4 – main content) ─── */
+.two-col {
+  display    : flex;
+  gap        : 1.2rem;
+  align-items: stretch;
+  margin-top : 1.25rem;  /* margin – Box Model */
+}
+
+.two-col > * {
+  flex: 1;
+}
+
+/* ============================================================
+   TASK 4 – CSS GRID 3×3 (Society grid)
+   ============================================================ */
+.grid-3x3 {
+  display              : grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap                  : 1.1rem;
+  margin-top           : 1.5rem;   /* margin – Box Model */
+}
+
+/* ── Table ───────────────────────────────────────────────────────── */
+.table {
+  width          : 100%;           /* width – Box Model */
+  border-collapse: collapse;
+  margin-top     : 0.75rem;        /* margin – Box Model */
+  border-radius  : 14px;
+  overflow       : hidden;
+}
+
+.table th,
+.table td {
+  border : 1px solid rgba(255, 255, 255, 0.12); /* border – Box Model */
+  padding: 0.75rem 0.9rem;                       /* padding – Box Model */
+  text-align: left;
+}
+
+.table thead th {
+  background : rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+}
+
+/* ── Lists ───────────────────────────────────────────────────────── */
+.list {
+  margin-top  : 0.5rem;    /* margin – Box Model */
+  padding-left: 1.3rem;    /* padding – Box Model */
+  color       : rgba(231, 237, 247, 0.88);
+}
+
+.list li {
+  margin-bottom: 0.4rem;   /* margin – Box Model */
+}
+
+.mini-list {
+  margin-top  : 0.5rem;    /* margin – Box Model */
+  padding-left: 1.2rem;    /* padding – Box Model */
+  color       : rgba(231, 237, 247, 0.84);
+}
+
+/* ── Form ────────────────────────────────────────────────────────── */
+.form {
+  margin-top: 1.5rem;   /* margin – Box Model */
+}
+
+.form-fieldset {
+  margin       : 0 0 1.2rem;     /* margin – Box Model */
+  padding      : 1.25rem;        /* padding – Box Model */
+  border-radius: var(--radius);
+  border       : 1px solid rgba(255, 255, 255, 0.12); /* border – Box Model */
+  background   : rgba(255, 255, 255, 0.03);
+}
+
+.form-fieldset legend {
+  padding    : 0 0.5rem;   /* padding – Box Model */
+  color      : rgba(231, 237, 247, 0.9);
+  font-weight: 700;
+}
+
+/* Grid layout for label + input pairs */
+.form-row {
+  display              : grid;
+  grid-template-columns: 240px 1fr;
+  gap                  : 0.9rem;
+  align-items          : center;
+  padding              : 0.55rem 0;   /* padding – Box Model */
+}
+
+label {
+  color: rgba(231, 237, 247, 0.9);
+}
+
+/* Grouping selector: all styled text inputs share these rules */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="file"] {
+  width        : 100%;           /* width – Box Model */
+  padding      : 0.72rem 0.9rem; /* padding – Box Model */
+  border-radius: 12px;
+  border       : 1px solid rgba(255, 255, 255, 0.14); /* border – Box Model */
+  background   : rgba(11, 18, 32, 0.65);
+  color        : rgba(231, 237, 247, 0.94);
+  transition   : border-color var(--transition);
+}
+
+/* Pseudo-class: highlighted border on hover */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="date"]:hover {
+  border-color: rgba(124, 92, 255, 0.45);
+}
+
+/* Checkboxes and radios grid */
+.check-grid {
+  display              : grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap                  : 0.65rem;
+  margin-top           : 0.5rem;   /* margin – Box Model */
+}
+
+/* Styled checkbox/radio label */
+.check {
+  display      : flex;
+  align-items  : center;
+  gap          : 0.6rem;
+  padding      : 0.6rem 0.8rem;   /* padding – Box Model */
+  border-radius: 12px;
+  border       : 1px solid rgba(255, 255, 255, 0.1);  /* border – Box Model */
+  background   : rgba(255, 255, 255, 0.03);
+  cursor       : pointer;
+  transition   : background var(--transition), border-color var(--transition);
+}
+
+/* Pseudo-class: checkbox/radio label hover */
+.check:hover {
+  background  : rgba(255, 255, 255, 0.07);
+  border-color: rgba(124, 92, 255, 0.4);
+}
+
+/* Agree row (standalone checkbox with separate label) */
+.agree-row {
+  display    : flex;
+  align-items: center;
+  gap        : 0.6rem;
+  margin-top : 0.75rem;   /* margin – Box Model */
+  padding    : 0.5rem 0;  /* padding – Box Model */
+}
+
+.radio-row {
+  display  : flex;
+  flex-wrap: wrap;
+  gap      : 0.75rem;
+  margin-top: 0.4rem;   /* margin – Box Model */
+}
+
+/* Flexbox: form action row */
+.form-actions {
+  display  : flex;
+  flex-wrap: wrap;
+  gap      : 0.8rem;
+  margin-top: 1rem;   /* margin – Box Model */
+}
+
+/* ============================================================
+   TASK 4 – FLEXBOX FOOTER (three columns)
+   ============================================================ */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* border – Box Model */
+  padding   : 2.5rem 0;                            /* padding – Box Model */
+  background: rgba(0, 0, 0, 0.14);
+  margin-top: 2rem;   /* margin – Box Model */
+}
+
+/* Flexbox: footer three-column layout */
+.footer-grid {
+  display    : flex;
+  gap        : 1.5rem;
+  align-items: flex-start;
+}
+
+.footer-col {
+  flex: 1;
+}
+
+.footer-col h2 {
+  font-size    : 1.05rem;
+  margin-bottom: 0.6rem;   /* margin – Box Model */
+}
+
+address {
+  font-style: normal;
+}
+
+.footer-links {
+  list-style  : none;
+  padding-left: 0;
+  margin-top  : 0.25rem;   /* margin – Box Model */
+}
+
+.footer-links li {
+  margin-bottom: 0.35rem;   /* margin – Box Model */
+}
+
+.footer-links a:hover {
+  color: var(--brand-2);
+}
+
+.copyright {
+  margin-top: 0.9rem;       /* margin – Box Model */
+  color     : var(--muted);
+  font-size : 0.93rem;
+}
+
+/* ============================================================
+   TASK 4 – MEDIA QUERIES (Responsive Design)
+   Three breakpoints: mobile ≤600px | tablet 601–991px | desktop ≥992px
+   ============================================================ */
+
+/* ── Mobile (≤ 600px) ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  /* Stack header: brand on top, nav below */
+  .header-bar {
+    flex-direction: column;
+    align-items   : stretch;
+    padding       : 0.75rem 0;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .nav-list {
+    justify-content: center;
+  }
+
+  /* Hero collapses to single column */
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy h2 {
+    font-size: 1.55rem;
+  }
+
+  /* Two-column sections stack vertically */
+  .two-col {
+    flex-direction: column;
+  }
+
+  /* Society grid: single column on mobile */
+  .grid-3x3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Form rows stack label above input */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Checkbox grid: 2 columns on mobile */
+  .check-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Footer stacks vertically */
+  .footer-grid {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+}
+
+/* ── Tablet (601px – 991px) ─────────────────────────────────────── */
+@media (min-width: 601px) and (max-width: 991px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  /* Hero stacks on tablet (image below text) */
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Society grid: 2 columns on tablet */
+  .grid-3x3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Narrow label column on tablet */
+  .form-row {
+    grid-template-columns: 180px 1fr;
+  }
+
+  /* Checkbox grid: 3 columns maintained */
+  .check-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+/* ── Desktop (≥ 992px) ──────────────────────────────────────────── */
+@media (min-width: 992px) {
+
+  body {
+    font-size: 17px;
+  }
+
+  /* Full 3-column grid on desktop */
+  .grid-3x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Hero two-column layout on desktop */
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  /* Wide label column on desktop */
+  .form-row {
+    grid-template-columns: 240px 1fr;
+  }
+}

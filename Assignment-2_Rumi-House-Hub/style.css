@@ -1,0 +1,31 @@
+/* style.css - Custom CSS for Rumi House Hub */
+
+/* Basic styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Custom Rumi House Dark Theme Color */
+.rumi-bg-dark {
+    background-color: #1a2b4c !important; /* Deep navy blue representing Namal/Rumi House */
+}
+
+/* Custom error message style for form validation */
+.error-text {
+    color: #dc3545;
+    font-size: 0.875em;
+    display: none; /* Hidden initially */
+    margin-top: 0.25rem;
+}
+
+/* Custom box style for the toggle section */
+.custom-box {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    transition: background-color 0.5s ease; /* Smooth transition for JS style change */
+}

@@ -1,0 +1,941 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abu Bakar | Personal Portfolio - WAD Assignment 3</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Personal portfolio of Abu Bakar, Computer Science Undergraduate, AI/ML Enthusiast, and Full-Stack Web Developer. Demonstrating responsive Bootstrap 5 skills.">
+    <meta name="keywords" content="Abu Bakar, Portfolio, Namal University, AI/ML, Full-Stack Developer, SudhaarAI, Bootstrap 5, Web Development">
+    <meta name="author" content="Abu Bakar">
+
+    <!-- 1. BOOTSTRAP 5 & DEPENDENCY CDNs -->
+    <!-- Google Font: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS v5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons v1.11.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- 14. CUSTOM CSS FILE (changes Bootstrap default appearance) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100">
+
+    <!-- 4. RESPONSIVE NAVBAR SECTION -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top" id="mainNavbar">
+        <div class="container">
+            <!-- Brand / Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#home" id="brandLogo">
+                <i class="bi bi-cpu-fill me-2 text-primary"></i>Abu Bakar
+            </a>
+            
+            <!-- Mobile Collapsible Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="navbarTogglerBtn">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Nav Links & Dropdown -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" id="navLinkHome">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" id="navLinkAbout">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills" id="navLinkSkills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects" id="navLinkProjects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services" id="navLinkServices">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#utilities" id="navLinkUtilities">Utilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" id="navLinkContact">Contact</a>
+                    </li>
+                    
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-custom border-0" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom" href="https://github.com/abubakarp789" target="_blank" rel="noopener noreferrer" id="dropdownGithub">
+                                    <i class="bi bi-github me-2 text-primary"></i>GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom" href="https://www.linkedin.com/in/abubakar56/" target="_blank" rel="noopener noreferrer" id="dropdownLinkedin">
+                                    <i class="bi bi-linkedin me-2 text-primary"></i>LinkedIn
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom" href="#" id="dropdownResume">
+                                    <i class="bi bi-file-earmark-pdf-fill me-2 text-success"></i>Resume Placeholder
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <header class="hero-section" id="home">
+        <div class="hero-container container">
+            <div class="row align-items-center gy-5">
+                <!-- Text Area -->
+                <div class="col-lg-6 text-center text-lg-start">
+                    <span class="hero-tag shadow-sm">Namal University CS Student</span>
+                    <h1 class="hero-title mb-3">Hi, I'm <span class="text-primary">Abu Bakar</span></h1>
+                    <h2 class="hero-subtitle mb-4">Computer Science Undergraduate | AI/ML Enthusiast | Full-Stack Web Developer</h2>
+                    <p class="lead text-muted mb-5 text-justify">
+                        I build AI-assisted software systems and full-stack web applications using Python, Flask, React, Next.js, and modern databases. My work focuses on machine learning, LLM-based features, and practical tools such as SudhaarAI.
+                    </p>
+                    
+                    <!-- 5. FOUR DISTINCT BUTTON STYLES -->
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#projects" class="btn btn-primary px-4 py-3" id="btnHeroProjects">
+                            <i class="bi bi-folder2-open me-2"></i>View Projects
+                        </a>
+                        <a href="#contact" class="btn btn-outline-primary px-4 py-3" id="btnHeroContact">
+                            <i class="bi bi-envelope me-2"></i>Contact Me
+                        </a>
+                        <a href="#contact" class="btn btn-success px-4 py-3" id="btnHeroCV">
+                            <i class="bi bi-download me-2"></i>Request CV
+                        </a>
+                        <a href="#skills" class="btn btn-info text-white px-4 py-3" id="btnHeroSkills">
+                            <i class="bi bi-rocket-takeoff me-2"></i>View Skills
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Styled Custom Browser Mockup (AI Code Optimization Platform Visual) -->
+                <div class="col-lg-6">
+                    <div class="browser-mockup mx-auto">
+                        <div class="browser-header">
+                            <span class="browser-dot dot-red"></span>
+                            <span class="browser-dot dot-yellow"></span>
+                            <span class="browser-dot dot-green"></span>
+                            <div class="browser-address"><i class="bi bi-lock-fill me-1 text-success"></i>sudhaar.ai/analyzer</div>
+                        </div>
+                        <div class="browser-content text-start">
+                            <div class="mb-1"><span class="code-keyword">import</span> <span class="code-class">sudhaar_ai</span></div>
+                            <div class="mb-1"><span class="code-comment"># Ingestion context through RAG pipeline</span></div>
+                            <div class="mb-1">optimizer = <span class="code-class">sudhaar_ai</span>.<span class="code-function">ProjectOptimizer</span>(path=<span class="code-string">"./src"</span>)</div>
+                            <div class="mb-1">analysis = optimizer.<span class="code-function">retrieve_context_and_analyze</span>()</div>
+                            <div class="mb-2"><span class="code-keyword">print</span>(analysis.<span class="code-function">get_optimization_suggestions</span>())</div>
+                            <hr style="border-top: 1px dashed rgba(255,255,255,0.15);" class="my-3">
+                            <div class="text-success small mb-1"><i class="bi bi-check-circle-fill me-1"></i> [RAG Database Status]: Python project context indexed.</div>
+                            <div class="text-info small mb-1"><i class="bi bi-cpu-fill me-1"></i> [LLM Recommendation]: Simplify nested loops inside RAG query engine.</div>
+                            <div class="text-warning small"><i class="bi bi-clock-history me-1"></i> [Optimized Outcome]: Review suggestions generated for developer action.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 4. DISMISSIBLE ALERT SECTION -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-info alert-dismissible fade show shadow-sm border-0 d-flex align-items-center p-3 mb-0" role="alert" id="internshipAlert">
+                    <i class="bi bi-info-circle-fill fs-4 me-3 text-info"></i>
+                    <div>
+                        <strong>Availability Alert:</strong> I am open to student-level full-stack web projects, AI/ML prototypes, and software development collaborations.
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. MAIN LAYOUT SECTION (GRID WITH MAIN CONTENT AREA AND SIDEBAR) -->
+    <main class="section-bg-light" id="about">
+        <div class="container">
+            <div class="row g-5">
+                
+                <!-- Main Content Column (About Me) -->
+                <div class="col-lg-8">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary text-white p-3 rounded-3 me-3 d-flex align-items-center justify-content-center">
+                                <i class="bi bi-person-workspace fs-3"></i>
+                            </div>
+                            <h2 class="mb-0 text-dark">About Me</h2>
+                        </div>
+                        
+                        <p class="lead text-primary mb-4 fw-medium">
+                            I am a Computer Science undergraduate at Namal University Mianwali, focused on AI-assisted software systems, machine learning, and full-stack development.
+                        </p>
+                        
+                        <p class="text-justify text-muted mb-4">
+                            My projects combine responsive web interfaces with practical backend systems, including REST APIs, authentication, database storage, and AI integrations. I have worked with Python, Flask, React, Next.js, TypeScript, MongoDB, ChromaDB, and cloud deployment tools.
+                        </p>
+                        
+                        <p class="text-justify text-muted mb-4">
+                            My final year project is SudhaarAI, a generative code assistant and context-based code optimizer. I have also built projects such as Cotton Seed Classifier, BarberAI, Ustad, MyNamalGPA, and a QR credentials website.
+                        </p>
+
+                        <div class="row g-4 mt-2">
+                            <div class="col-sm-6">
+                                <div class="p-3 border rounded-3 bg-light d-flex align-items-center">
+                                    <i class="bi bi-book-half text-primary fs-3 me-3"></i>
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">Academic Status</h6>
+                                        <small class="text-muted">BS Computer Science, 2022-2026</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 border rounded-3 bg-light d-flex align-items-center">
+                                    <i class="bi bi-award-fill text-teal fs-3 me-3 text-success"></i>
+                                    <div>
+                                        <h6 class="mb-0 fw-bold">Core Focus</h6>
+                                        <small class="text-muted">AI/ML, full-stack web apps</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar Column (Quick Profile Card) -->
+                <div class="col-lg-4">
+                    <aside class="profile-card">
+                        <!-- Profile Avatar -->
+                        <div class="profile-avatar-wrapper">
+                            <div class="profile-avatar-bg">
+                                <div class="profile-avatar">
+                                    <img src="images/profile.png" alt="Portrait of Abu Bakar">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-center mb-1">Abu Bakar</h4>
+                        <p class="text-center text-muted small mb-4">CS Undergraduate & Software Developer</p>
+                        
+                        <div class="mb-4">
+                            <div class="profile-detail-item">
+                                <span class="text-muted"><i class="bi bi-geo-alt-fill me-2 text-primary"></i>Location:</span>
+                                <span class="fw-semibold text-dark">Mirpur Khas, Sindh, Pakistan</span>
+                            </div>
+                            <div class="profile-detail-item">
+                                <span class="text-muted"><i class="bi bi-envelope-fill me-2 text-primary"></i>Email:</span>
+                                <a class="fw-semibold text-dark text-end" href="mailto:abubakarp789@gmail.com">abubakarp789@gmail.com</a>
+                            </div>
+                            <div class="profile-detail-item">
+                                <span class="text-muted"><i class="bi bi-github me-2 text-primary"></i>GitHub:</span>
+                                <a class="fw-semibold text-dark text-end" href="https://github.com/abubakarp789" target="_blank" rel="noopener noreferrer">@abubakarp789</a>
+                            </div>
+                            <div class="profile-detail-item">
+                                <span class="text-muted"><i class="bi bi-linkedin me-2 text-primary"></i>LinkedIn:</span>
+                                <a class="fw-semibold text-dark text-end" href="https://www.linkedin.com/in/abubakar56/" target="_blank" rel="noopener noreferrer">abubakar56</a>
+                            </div>
+                            <div class="profile-detail-item">
+                                <span class="text-muted"><i class="bi bi-mortarboard-fill me-2 text-primary"></i>University:</span>
+                                <span class="fw-semibold text-dark text-end">Namal University</span>
+                            </div>
+                            <div class="profile-detail-item">
+                                <span class="text-muted"><i class="bi bi-check-circle-fill me-2 text-success"></i>Status:</span>
+                                <span class="fw-semibold text-success">Active / Enrolled</span>
+                            </div>
+                            <div class="profile-detail-item">
+                                <span class="text-muted"><i class="bi bi-calendar-event-fill me-2 text-primary"></i>Graduation:</span>
+                                <span class="fw-semibold text-dark">June 2026</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 7. BADGES IN SIDEBAR -->
+                        <h6 class="fw-bold mb-3"><i class="bi bi-tags-fill me-2 text-primary"></i>Core Stack</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge badge-custom badge-skill">Python</span>
+                            <span class="badge badge-custom badge-skill">React</span>
+                            <span class="badge badge-custom badge-skill">TypeScript</span>
+                            <span class="badge badge-custom badge-skill">AI/ML</span>
+                            <span class="badge badge-custom badge-skill">RAG</span>
+                            <span class="badge badge-custom badge-skill">Flask</span>
+                            <span class="badge badge-custom badge-skill">Next.js</span>
+                            <span class="badge badge-custom badge-skill">MongoDB</span>
+                            <span class="badge badge-custom badge-skill">GitHub</span>
+                        </div>
+                    </aside>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- 5. SKILLS SECTION WITH VERIFIED SKILL CARDS -->
+    <section id="skills">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="hero-tag shadow-sm">My Toolkit</span>
+                <h2 class="display-6 fw-bold mb-2">Technical Competencies</h2>
+                <p class="text-muted">Verified skills from my CV and local project files, grouped by practical use.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card p-4 shadow-sm border">
+                        <div class="card-icon-wrapper card-icon-blue"><i class="bi bi-window"></i></div>
+                        <h4 class="h5 mb-3 text-dark">Frontend</h4>
+                        <p class="text-muted small mb-3">Project experience building responsive interfaces and component-based web apps.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge badge-custom badge-skill">HTML5</span>
+                            <span class="badge badge-custom badge-skill">CSS3</span>
+                            <span class="badge badge-custom badge-skill">Bootstrap 5</span>
+                            <span class="badge badge-custom badge-skill">React</span>
+                            <span class="badge badge-custom badge-skill">Next.js</span>
+                            <span class="badge badge-custom badge-skill">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card p-4 shadow-sm border">
+                        <div class="card-icon-wrapper card-icon-teal"><i class="bi bi-server"></i></div>
+                        <h4 class="h5 mb-3 text-dark">Backend</h4>
+                        <p class="text-muted small mb-3">Project experience with APIs, authentication flows, and server-side application logic.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge badge-custom badge-skill">Python</span>
+                            <span class="badge badge-custom badge-skill">Flask</span>
+                            <span class="badge badge-custom badge-skill">FastAPI</span>
+                            <span class="badge badge-custom badge-skill">REST APIs</span>
+                            <span class="badge badge-custom badge-skill">Node.js</span>
+                            <span class="badge badge-custom badge-skill">Express</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="custom-card p-4 shadow-sm border">
+                        <div class="card-icon-wrapper card-icon-blue" style="background-color: rgba(79, 70, 229, 0.08); color: #4F46E5;"><i class="bi bi-brain"></i></div>
+                        <h4 class="h5 mb-3 text-dark">AI/ML</h4>
+                        <p class="text-muted small mb-3">Academic and project experience from SudhaarAI, Cotton Seed Classifier, BarberAI, and related coursework.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge badge-custom badge-skill">Machine Learning</span>
+                            <span class="badge badge-custom badge-skill">Deep Learning</span>
+                            <span class="badge badge-custom badge-skill">NLP</span>
+                            <span class="badge badge-custom badge-skill">RAG</span>
+                            <span class="badge badge-custom badge-skill">LLM APIs</span>
+                            <span class="badge badge-custom badge-skill">Scikit-learn</span>
+                            <span class="badge badge-custom badge-skill">PyTorch</span>
+                            <span class="badge badge-custom badge-skill">TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="custom-card p-4 shadow-sm border">
+                        <div class="card-icon-wrapper card-icon-teal"><i class="bi bi-database"></i></div>
+                        <h4 class="h5 mb-3 text-dark">Database</h4>
+                        <p class="text-muted small mb-3">Database tools verified from CV and local full-stack projects.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge badge-custom badge-skill">MongoDB</span>
+                            <span class="badge badge-custom badge-skill">ChromaDB</span>
+                            <span class="badge badge-custom badge-skill">MySQL</span>
+                            <span class="badge badge-custom badge-skill">Neo4j</span>
+                            <span class="badge badge-custom badge-skill">PostgreSQL</span>
+                            <span class="badge badge-custom badge-skill">Prisma</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="custom-card p-4 shadow-sm border">
+                        <div class="card-icon-wrapper card-icon-blue"><i class="bi bi-tools"></i></div>
+                        <h4 class="h5 mb-3 text-dark">Tools</h4>
+                        <p class="text-muted small mb-3">Tools and platforms verified from CV, Git remotes, and project documentation.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge badge-custom badge-skill">Git</span>
+                            <span class="badge badge-custom badge-skill">GitHub</span>
+                            <span class="badge badge-custom badge-skill">Microsoft Azure</span>
+                            <span class="badge badge-custom badge-skill">Google Cloud Run</span>
+                            <span class="badge badge-custom badge-skill">Firebase</span>
+                            <span class="badge badge-custom badge-skill">Clerk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- 6 & 13. PROJECTS SECTION (MINIMUM 6 RESPONSIVE CARDS) -->
+    <section class="section-bg-light" id="projects">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="hero-tag shadow-sm">My Work</span>
+                <h2 class="display-6 fw-bold mb-2">Academic & Practical Projects</h2>
+                <p class="text-muted">Verified projects from my CV, Desktop project folders, README files, package files, and local Git remotes.</p>
+            </div>
+            
+            <div class="row g-4 animate-cards">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card border shadow-sm">
+                        <div class="project-card-header project-gradient-1"><i class="bi bi-file-earmark-code project-icon"></i></div>
+                        <div class="card-body p-4 d-flex flex-column h-100">
+                            <div class="mb-2"><span class="badge bg-primary text-white">FYP</span><span class="badge bg-dark text-white">Full-Stack AI</span></div>
+                            <h4 class="h5 card-title mb-2 text-dark">SudhaarAI</h4>
+                            <p class="card-text text-muted small flex-grow-1 text-justify">A generative code assistant and context-based code optimizer that analyzes Python projects, retrieves context through a RAG pipeline, and generates code improvement suggestions using multiple LLM providers.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-3"><span class="badge bg-light text-dark border">Next.js</span><span class="badge bg-light text-dark border">Flask</span><span class="badge bg-light text-dark border">ChromaDB</span><span class="badge bg-light text-dark border">MongoDB</span></div>
+                            <a href="https://github.com/abubakarp789/SudhaarAI" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm w-100" id="btnProjectSudhaar">GitHub Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card border shadow-sm">
+                        <div class="project-card-header project-gradient-2"><i class="bi bi-filter-square project-icon"></i></div>
+                        <div class="card-body p-4 d-flex flex-column h-100">
+                            <div class="mb-2"><span class="badge bg-success text-white">Deep Learning</span><span class="badge bg-secondary text-white">Computer Vision</span></div>
+                            <h4 class="h5 card-title mb-2 text-dark">Cotton Seed Classifier</h4>
+                            <p class="card-text text-muted small flex-grow-1 text-justify">A web and Flutter-based cotton seed classification system using a ResNet50 CNN model to classify seven cotton seed varieties, with batch prediction visualization for easier review.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-3"><span class="badge bg-light text-dark border">ResNet50</span><span class="badge bg-light text-dark border">CNN</span><span class="badge bg-light text-dark border">Flutter</span><span class="badge bg-light text-dark border">Chart.js</span></div>
+                            <a href="#" class="btn btn-outline-primary btn-sm w-100" id="btnProjectCotton">Details Available on Request</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card border shadow-sm">
+                        <div class="project-card-header project-gradient-3"><i class="bi bi-scissors project-icon"></i></div>
+                        <div class="card-body p-4 d-flex flex-column h-100">
+                            <div class="mb-2"><span class="badge bg-warning text-dark">AI Integration</span><span class="badge bg-dark text-white">Web App</span></div>
+                            <h4 class="h5 card-title mb-2 text-dark">BarberAI</h4>
+                            <p class="card-text text-muted small flex-grow-1 text-justify">An AI-powered barber booking platform using Gemini vision features to analyze face images and recommend hairstyles before booking appointments with local barbers.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-3"><span class="badge bg-light text-dark border">React</span><span class="badge bg-light text-dark border">TypeScript</span><span class="badge bg-light text-dark border">Firebase</span><span class="badge bg-light text-dark border">Gemini API</span></div>
+                            <a href="https://github.com/abubakarp789/BarberAI" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm w-100" id="btnProjectBarber">GitHub Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card border shadow-sm">
+                        <div class="project-card-header project-gradient-4"><i class="bi bi-terminal project-icon"></i></div>
+                        <div class="card-body p-4 d-flex flex-column h-100">
+                            <div class="mb-2"><span class="badge bg-info text-white">AI Automation</span><span class="badge bg-dark text-white">Next.js</span></div>
+                            <h4 class="h5 card-title mb-2 text-dark">Ustad</h4>
+                            <p class="card-text text-muted small flex-grow-1 text-justify">An AI automation tool that converts Google Cloud Skills Boost lab instructions into executable Bash scripts, with progress tracking and Markdown export.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-3"><span class="badge bg-light text-dark border">Next.js</span><span class="badge bg-light text-dark border">Gemini</span><span class="badge bg-light text-dark border">Clerk</span><span class="badge bg-light text-dark border">PostgreSQL</span></div>
+                            <a href="https://github.com/abubakarp789/ustad" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm w-100" id="btnProjectUstad">GitHub Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card border shadow-sm">
+                        <div class="project-card-header project-gradient-5"><i class="bi bi-calculator project-icon"></i></div>
+                        <div class="card-body p-4 d-flex flex-column h-100">
+                            <div class="mb-2"><span class="badge bg-danger text-white">Student Tool</span><span class="badge bg-dark text-white">React</span></div>
+                            <h4 class="h5 card-title mb-2 text-dark">MyNamalGPA</h4>
+                            <p class="card-text text-muted small flex-grow-1 text-justify">A GPA/CGPA calculator for Namal University students with HEC grading logic, repeat course handling, PDF export, and client-side validation.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-3"><span class="badge bg-light text-dark border">React</span><span class="badge bg-light text-dark border">TypeScript</span><span class="badge bg-light text-dark border">Vite</span><span class="badge bg-light text-dark border">Tailwind CSS</span></div>
+                            <a href="https://mynamalgpa.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm w-100" id="btnProjectGPA">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card border shadow-sm">
+                        <div class="project-card-header project-gradient-6"><i class="bi bi-qr-code-scan project-icon"></i></div>
+                        <div class="card-body p-4 d-flex flex-column h-100">
+                            <div class="mb-2"><span class="badge bg-primary text-white">Static Web</span><span class="badge bg-success text-white">Credentials</span></div>
+                            <h4 class="h5 card-title mb-2 text-dark">QR Credentials Website</h4>
+                            <p class="card-text text-muted small flex-grow-1 text-justify">A small static credentials page with a portrait, email, LinkedIn, GitHub, and resume actions, designed to be opened from a QR code.</p>
+                            <div class="d-flex flex-wrap gap-1 mb-3"><span class="badge bg-light text-dark border">HTML</span><span class="badge bg-light text-dark border">CSS</span><span class="badge bg-light text-dark border">Responsive Design</span></div>
+                            <a href="#" class="btn btn-outline-primary btn-sm w-100" id="btnProjectQR">Local Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SERVICES SECTION (6 RESPONSIVE CARDS) -->
+    <section id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="hero-tag shadow-sm">Services</span>
+                <h2 class="display-6 fw-bold mb-2">Student-Friendly Services</h2>
+                <p class="text-muted">Realistic student and freelance services based on my verified web development and AI/ML project experience.</p>
+            </div>
+            
+            <div class="row g-4">
+                
+                <!-- Service 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card p-4 d-flex flex-column h-100 border shadow-sm">
+                        <div class="card-icon-wrapper card-icon-blue">
+                            <i class="bi bi-tablet-landscape"></i>
+                        </div>
+                        <h4 class="h5 mb-2 text-dark">Responsive Web Design</h4>
+                        <p class="text-muted small flex-grow-1 text-justify">
+                            Creating clean Bootstrap and React layouts that work well across mobile, tablet, and desktop screens.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card p-4 d-flex flex-column h-100 border shadow-sm">
+                        <div class="card-icon-wrapper card-icon-teal">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h4 class="h5 mb-2 text-dark">AI/ML Prototyping</h4>
+                        <p class="text-muted small flex-grow-1 text-justify">
+                            Building small AI/ML prototypes with model inference, LLM APIs, basic computer vision, or RAG-style workflows.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card p-4 d-flex flex-column h-100 border shadow-sm">
+                        <div class="card-icon-wrapper card-icon-indigo" style="background-color: rgba(79, 70, 229, 0.08); color: #4F46E5;">
+                            <i class="bi bi-stack"></i>
+                        </div>
+                        <h4 class="h5 mb-2 text-dark">Full-Stack Development</h4>
+                        <p class="text-muted small flex-grow-1 text-justify">
+                            Building project-level web apps that connect responsive client interfaces with APIs, authentication, and databases.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card p-4 d-flex flex-column h-100 border shadow-sm">
+                        <div class="card-icon-wrapper card-icon-teal">
+                            <i class="bi bi-credit-card-2-front"></i>
+                        </div>
+                        <h4 class="h5 mb-2 text-dark">Portfolio & Resume Sites</h4>
+                        <p class="text-muted small flex-grow-1 text-justify">
+                            Creating personal portfolio and resume websites with clear content, responsive layouts, and simple static deployment paths.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card p-4 d-flex flex-column h-100 border shadow-sm">
+                        <div class="card-icon-wrapper card-icon-blue">
+                            <i class="bi bi-terminal-fill"></i>
+                        </div>
+                        <h4 class="h5 mb-2 text-dark">Python Automation</h4>
+                        <p class="text-muted small flex-grow-1 text-justify">
+                            Writing Python scripts for data cleanup, file handling, small workflow automation, and project utilities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card p-4 d-flex flex-column h-100 border shadow-sm">
+                        <div class="card-icon-wrapper card-icon-indigo" style="background-color: rgba(79, 70, 229, 0.08); color: #4F46E5;">
+                            <i class="bi bi-vector-pen"></i>
+                        </div>
+                        <h4 class="h5 mb-2 text-dark">UI/UX Improvements</h4>
+                        <p class="text-muted small flex-grow-1 text-justify">
+                            Improving existing pages with clearer spacing, better responsive behavior, accessible forms, and cleaner UI states.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. BOOTSTRAP UTILITIES SHOWCASE SECTION -->
+    <section class="section-bg-light" id="utilities">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="hero-tag shadow-sm">Assignment Demonstration</span>
+                <h2 class="display-6 fw-bold mb-2">Bootstrap Utilities Showcase</h2>
+                <p class="text-muted">A dedicated demonstration highlighting core utilities requested by the WAD Assignment 3 rubric.</p>
+            </div>
+            
+            <div class="row g-4">
+                
+                <!-- Utility 1: Margin & Padding -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="utility-card p-4 h-100 border">
+                        <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-distribute-vertical me-2 text-primary"></i>Margin & Padding</h5>
+                        <p class="text-muted small mb-3">Controls space inside container boundaries and external gaps between grid blocks.</p>
+                        
+                        <div class="bg-light border p-4 mb-2 text-center rounded">
+                            <span class="utility-label mb-2">p-4 (Internal Padding)</span>
+                            <div class="bg-primary text-white my-3 p-2 rounded">
+                                <span class="utility-label bg-white text-primary">my-3 (Vertical Margin)</span>
+                            </div>
+                        </div>
+                        <small class="text-muted">Demonstrated: <code>p-4</code>, <code>my-3</code>, <code>p-2</code>, <code>mb-2</code>.</small>
+                    </div>
+                </div>
+
+                <!-- Utility 2: Text Alignment -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="utility-card p-4 h-100 border">
+                        <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-text-center me-2 text-primary"></i>Text Alignment</h5>
+                        <p class="text-muted small mb-3">Aligns typography nodes horizontally inside layouts at different device breakpoints.</p>
+                        
+                        <div class="bg-light border p-3 rounded mb-2 text-center">
+                            <p class="text-center mb-1">Center Aligned Text</p>
+                            <p class="utility-label mb-0">text-center</p>
+                        </div>
+                        <div class="bg-light border p-3 rounded mb-2 text-start">
+                            <p class="text-start mb-1 text-md-end">Responsive Right Text on Desktop</p>
+                            <p class="utility-label mb-0">text-start text-md-end</p>
+                        </div>
+                        <small class="text-muted">Demonstrated: <code>text-center</code>, <code>text-start</code>, <code>text-md-end</code>.</small>
+                    </div>
+                </div>
+
+                <!-- Utility 3: Background & Text Colors -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="utility-card p-4 h-100 border">
+                        <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-palette-fill me-2 text-primary"></i>Theme Colors</h5>
+                        <p class="text-muted small mb-3">Applies custom color schemes to foreground labels and underlying block segments.</p>
+                        
+                        <div class="d-flex flex-column gap-2 mb-2">
+                            <div class="bg-primary text-white p-2 rounded text-center small fw-semibold">
+                                Primary BG & White Text
+                            </div>
+                            <div class="bg-dark text-white p-2 rounded text-center small fw-semibold">
+                                Dark BG & White Text
+                            </div>
+                            <div class="bg-light text-primary p-2 border rounded text-center small fw-semibold">
+                                Light BG & Primary Text
+                            </div>
+                            <div class="text-muted text-center small">
+                                Text Mutated Style Indicator
+                            </div>
+                        </div>
+                        <small class="text-muted">Demonstrated: <code>bg-primary</code>, <code>bg-dark</code>, <code>bg-light</code>, <code>text-white</code>, <code>text-primary</code>, <code>text-muted</code>.</small>
+                    </div>
+                </div>
+
+                <!-- Utility 4: Borders -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="utility-card p-4 h-100 border">
+                        <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-border-style me-2 text-primary"></i>Borders</h5>
+                        <p class="text-muted small mb-3">Controls perimeter line displays and rounds item edges securely.</p>
+                        
+                        <div class="d-flex flex-wrap gap-2 justify-content-center mb-2 p-3 bg-light rounded">
+                            <div class="border border-primary p-2 bg-white small rounded-3 fw-medium">
+                                border border-primary
+                            </div>
+                            <div class="border-top border-3 border-teal p-2 bg-white small rounded-bottom fw-medium" style="border-top-color: #0d9488 !important;">
+                                border-top border-teal
+                            </div>
+                            <div class="border border-2 border-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 0.75rem;">
+                                Circle
+                            </div>
+                        </div>
+                        <small class="text-muted">Demonstrated: <code>border</code>, <code>border-primary</code>, <code>border-teal</code>, <code>rounded-3</code>, <code>rounded-circle</code>.</small>
+                    </div>
+                </div>
+
+                <!-- Utility 5: Shadows -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="utility-card p-4 h-100 border">
+                        <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-layers-half me-2 text-primary"></i>Shadows</h5>
+                        <p class="text-muted small mb-3">Applies responsive spatial elevation vectors to elements, making layouts look distinct.</p>
+                        
+                        <div class="d-flex flex-column gap-3 mb-2 p-2 bg-light rounded">
+                            <div class="bg-white p-2 shadow-sm rounded text-center small fw-semibold">
+                                Shadow-sm (Subtle)
+                            </div>
+                            <div class="bg-white p-2 shadow rounded text-center small fw-semibold">
+                                Shadow (Regular)
+                            </div>
+                        </div>
+                        <small class="text-muted">Demonstrated: <code>shadow-sm</code>, <code>shadow</code>.</small>
+                    </div>
+                </div>
+
+                <!-- Utility 6: Display Utilities -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="utility-card p-4 h-100 border">
+                        <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-eye-slash-fill me-2 text-primary"></i>Display Settings</h5>
+                        <p class="text-muted small mb-3">Modifies element structures to block, inline, hidden, or flex grids responsively.</p>
+                        
+                        <div class="bg-light border p-3 rounded mb-2 text-center">
+                            <div class="d-none d-md-block bg-primary text-white p-2 rounded mb-2 small fw-semibold">
+                                Visible on Desktop & Tablet, Hidden on Mobile
+                            </div>
+                            <div class="d-block d-md-none bg-teal text-white p-2 rounded mb-2 small fw-semibold">
+                                Visible on Mobile Only
+                            </div>
+                            <div class="d-flex justify-content-between bg-white border p-2 rounded small">
+                                <span>Flex Left</span>
+                                <span class="utility-label">d-flex</span>
+                                <span>Flex Right</span>
+                            </div>
+                        </div>
+                        <small class="text-muted">Demonstrated: <code>d-none</code>, <code>d-md-block</code>, <code>d-block</code>, <code>d-md-none</code>, <code>d-flex</code>, <code>justify-content-between</code>.</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 9, 10 & 11. FORM SECTION WITH GRID, VALIDATION FEEDBACK, AND REQUIRED CONTROLS -->
+    <section id="contact">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="hero-tag shadow-sm">Registration & Contact</span>
+                <h2 class="display-6 fw-bold mb-2">Student Verification Portal</h2>
+                <p class="text-muted">Fill out this registration form to test Bootstrap validation rules or contact me about a project.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form-card border">
+                        
+                        <!-- Form with Needs-Validation script hook -->
+                        <form class="needs-validation" id="accessForm" novalidate>
+                            
+                            <!-- Form Grid: Full Name & Email (Uses Bootstrap 5 Floating Labels) -->
+                            <div class="row g-4 mb-3">
+                                <!-- Full Name -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
+                                        <label for="fullName"><i class="bi bi-person me-2 text-muted"></i>Full Name <span class="text-danger">*</span></label>
+                                        <div class="valid-feedback">Looks great!</div>
+                                        <div class="invalid-feedback">Please enter your full name.</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email Address -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="emailAddress" placeholder="name@example.com" required>
+                                        <label for="emailAddress"><i class="bi bi-envelope me-2 text-muted"></i>Email Address <span class="text-danger">*</span></label>
+                                        <div class="valid-feedback">Valid email configuration.</div>
+                                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row g-4 mb-3">
+                                <!-- Password / Access Code -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" id="accessCode" placeholder="Access Code" minlength="6" required>
+                                        <label for="accessCode"><i class="bi bi-shield-lock me-2 text-muted"></i>Demo Access Code <span class="text-danger">*</span></label>
+                                        <div class="valid-feedback">Code is structurally valid.</div>
+                                        <div class="invalid-feedback">Access code must be at least 6 characters.</div>
+                                    </div>
+                                    <small class="text-muted mt-1 d-block">Demo code required for assignment verification.</small>
+                                </div>
+
+                                <!-- Country Selection -->
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="countrySelection" required>
+                                            <option value="" disabled selected>Choose your country...</option>
+                                            <option value="Pakistan">Pakistan</option>
+                                            <option value="United States">United States</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="Germany">Germany</option>
+                                        </select>
+                                        <label for="countrySelection"><i class="bi bi-globe me-2 text-muted"></i>Country Selection <span class="text-danger">*</span></label>
+                                        <div class="valid-feedback">Country selected successfully.</div>
+                                        <div class="invalid-feedback">Please select a country.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gender Selection (Radio Buttons) -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold text-muted small mb-2"><i class="bi bi-gender-ambiguous me-1"></i>Gender Selection <span class="text-danger">*</span></label>
+                                <div class="d-flex gap-4 p-3 bg-light border rounded-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genderOptions" id="genderMale" value="male" required>
+                                        <label class="form-check-label fw-medium text-secondary" for="genderMale">
+                                            Male
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genderOptions" id="genderFemale" value="female" required>
+                                        <label class="form-check-label fw-medium text-secondary" for="genderFemale">
+                                            Female
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="genderOptions" id="genderOther" value="other" required>
+                                        <label class="form-check-label fw-medium text-secondary" for="genderOther">
+                                            Prefer not to say
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="invalid-feedback mt-2" id="genderError" style="display: none;">Please choose a gender option.</div>
+                            </div>
+
+                            <!-- Terms & Conditions Checkbox -->
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                    <label class="form-check-label text-muted small" for="termsCheck">
+                                        I certify that the information entered is accurate, and I agree to authorize credentials review for Assignment 3.
+                                    </label>
+                                    <div class="valid-feedback">Agreed.</div>
+                                    <div class="invalid-feedback">You must check the box to proceed.</div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center mt-5">
+                                <button class="btn btn-primary px-5 py-3 w-100" type="submit" id="btnSubmitForm">
+                                    <i class="bi bi-check-circle-fill me-2"></i>Submit Registration
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Dynamic Success Feedback Container -->
+                        <div class="mt-4 d-none" id="successCard">
+                            <div class="alert alert-success border-0 shadow-sm d-flex align-items-center mb-0" role="alert">
+                                <i class="bi bi-shield-check fs-3 me-3 text-success"></i>
+                                <div>
+                                    <h6 class="alert-heading fw-bold mb-1">Form Validated & Submitted!</h6>
+                                    <p class="mb-0 small text-muted">All Bootstrap validation conditions met. Local state compiled successfully.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                
+                <!-- Brand segment -->
+                <div class="col-lg-5">
+                    <h5 class="fw-bold text-white"><i class="bi bi-cpu-fill me-2 text-primary"></i>Abu Bakar</h5>
+                    <p class="small text-muted mb-4 text-justify">
+                        Computer Science undergraduate at Namal University, focused on AI-assisted software systems, machine learning, and full-stack web development.
+                    </p>
+                    <div class="d-flex">
+                        <a href="https://github.com/abubakarp789" target="_blank" rel="noopener noreferrer" class="social-icon-btn"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abubakar56/" target="_blank" rel="noopener noreferrer" class="social-icon-btn"><i class="bi bi-linkedin"></i></a>
+                        <a href="mailto:abubakarp789@gmail.com" class="social-icon-btn"><i class="bi bi-envelope-fill"></i></a>
+                        <a href="https://github.com/abubakarp789/Portfolio" target="_blank" rel="noopener noreferrer" class="social-icon-btn"><i class="bi bi-folder2-open"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation Quick Links -->
+                <div class="col-md-3 ms-lg-auto col-6">
+                    <h5 class="text-white">Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+
+                <!-- Assignment details -->
+                <div class="col-md-3 col-6">
+                    <h5 class="text-white">Assignment Info</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small text-muted">
+                        <li>Course: WAD</li>
+                        <li>Assignment: No. 3</li>
+                        <li>Instructor: Ammar A. Khan</li>
+                        <li>Institute: Namal University</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+
+            <!-- Bottom Copyright text -->
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 small text-muted">&copy; 2026 Abu Bakar. All rights reserved. Personal Portfolio Assignment.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 small text-muted">Submitted to Department of CS, Namal University Mianwali.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper JS CDN v5.3.3 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- 11. CUSTOM JAVASCRIPT VALIDATION FEEDBACK SCRIPT -->
+    <script>
+        (function () {
+            'use strict'
+
+            // Toggle navbar background shade on scroll
+            var navbar = document.getElementById('mainNavbar')
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('navbar-scrolled')
+                } else {
+                    navbar.classList.remove('navbar-scrolled')
+                }
+            })
+
+            // Fetch form instances targeting 'needs-validation' rule
+            var forms = document.querySelectorAll('.needs-validation')
+            var successCard = document.getElementById('successCard')
+
+            // Loop over selectors and prevent default submission on invalid credentials
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        event.preventDefault() // Prevent standard form submit refresh
+                        
+                        var isValid = form.checkValidity()
+                        
+                        // Handle radio button specific error visibility if needed
+                        var maleSelected = document.getElementById('genderMale').checked
+                        var femaleSelected = document.getElementById('genderFemale').checked
+                        var otherSelected = document.getElementById('genderOther').checked
+                        var genderError = document.getElementById('genderError')
+                        
+                        if (!maleSelected && !femaleSelected && !otherSelected) {
+                            genderError.style.display = 'block'
+                            genderError.style.color = '#EF4444'
+                            genderError.style.fontSize = '0.82rem'
+                            genderError.style.fontWeight = '500'
+                            isValid = false
+                        } else {
+                            genderError.style.display = 'none'
+                        }
+
+                        if (!isValid) {
+                            event.stopPropagation()
+                            successCard.classList.add('d-none')
+                        } else {
+                            // Elements are successfully validated
+                            successCard.classList.remove('d-none')
+                            
+                            // Log confirmation to console
+                            console.log("Bootstrap validation confirmed. Form fields verified.")
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+</html>
+
