@@ -556,6 +556,10 @@ footer {
     border-top: 5px solid var(--blue-600);
 }
 
+footer .text-muted {
+    color: #94A3B8 !important; /* Bright high-contrast light slate on dark background */
+}
+
 footer h5 {
     color: var(--white);
     font-weight: 700;
