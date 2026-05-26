@@ -19,6 +19,7 @@
     --slate-100: #F1F5F9;      /* Slate border/bg */
     --slate-50: #F8FAFC;       /* Off-white background */
     --white: #FFFFFF;
+    --accent-indigo: #4F46E5;  /* Accent Indigo for Cards */
     
     /* Premium Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
@@ -29,6 +30,14 @@
     /* Animation Speeds */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Helper Utility Classes */
+.bg-teal {
+    background-color: var(--teal-600) !important;
+}
+.text-teal {
+    color: var(--teal-600) !important;
 }
 
 /* --- 2. GLOBAL RESET & BASE STYLES --- */
