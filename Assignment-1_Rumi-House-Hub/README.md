@@ -5,82 +5,95 @@ Built with **pure HTML5** and an **external CSS** file — no frameworks or Java
 
 ---
 
-## 📸 Preview
+## 🎓 Academic Details
 
-| Header & Hero | Societies Grid | Events & Form |
-|---|---|---|
-| ![Hero](screenshots/01_header_hero.png) | ![Grid](screenshots/02_about_societies.png) | ![Events](screenshots/03_events_table.png) |
+| Field | Detail |
+|---|---|
+| **Course** | Web Application Development (WAD) |
+| **Department** | Department of Computer Science |
+| **Institution** | Namal University, Mianwali |
+| **Instructor** | Ammar Ahmad Khan |
+| **Student Name** | Abu Bakar |
+| **Roll Number** | NUM-BSCS-2022-41 |
+| **Due Date** | 20-March-2026 |
 
 ---
 
-## 🚀 Features
+## 📸 Visual Previews
 
-### Task 1 — HTML Structure
-- Semantic HTML5: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`, `<figure>`, `<address>`
-- Proper `<head>` with title, charset, viewport, description, and keywords meta tags
-- Heading hierarchy (`h1`–`h4`), paragraphs, links, and images with alt text
+### 1. Header & Hero Section
+![Header and Hero Section](screenshots/01_header_hero.png)
 
-### Task 2 — Content Elements
-- **Form** with all 8 input types: text, email, password, checkbox, radio, date, file, submit
-- **Table** — 4 columns × 4 rows with `<thead>`, `scope="col"`, and `<time>` elements
-- **Ordered list** — 6 items (registration steps)
-- **Unordered list** — 6 items (benefits of joining)
-- **Audio** — `<audio controls>` with WAV source
-- **Video** — `<video controls>` with MP4 source
-- **Accessibility** — alt text, labels, skip link, ARIA attributes
+### 2. About Me & Societies 3x3 Grid
+![About and Societies Grid](screenshots/02_about_societies.png)
 
-### Task 3 — CSS Styling & Box Model
-- **External stylesheet** (`styles.css`) — no inline or embedded styles
-- **Selector types**: element, class, ID, grouping, pseudo-class (`:hover`, `:focus-visible`, `:nth-child`), pseudo-element (`::before`, `::first-line`)
-- **Box Model**: `margin`, `padding`, `border`, `width`, `height`, `box-sizing: border-box`
-- CSS custom properties, smooth transitions, gradient backgrounds
+### 3. Events Schedule Table & Spotlight
+![Events Schedule](screenshots/03_events_table.png)
 
-### Task 4 — Layout & Responsiveness
-- **Flexbox**: navigation bar, header, two-column panels, footer, button rows
-- **CSS Grid**: 3×3 society cards, hero two-column layout, form label+input rows
-- **Media Queries**: mobile (≤600px), tablet (601–991px), desktop (≥992px)
+### 4. Membership / Registration Form
+![Registration Form](screenshots/04_registration_form.png)
+
+### 5. Multimedia Player & Footer
+![Multimedia and Footer](screenshots/05_multimedia_footer.png)
+
+---
+
+## 🚀 Key Implemented Features
+
+### 📋 Task 1 — HTML Structure
+- Semantic HTML5 tags utilized throughout (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`, `<figure>`, `<address>`).
+- Complete `<head>` meta configuration including `charset`, `viewport`, `description`, and `keywords`.
+- Strict heading hierarchy (`h1`–`h4`), clear paragraphs, descriptive alt texts for images, and standard keyboard-accessible anchor links.
+
+### ⚙️ Task 2 — Content Elements
+- **Membership Form**: Implemented all **8 required input types** (`text`, `email`, `password`, `checkbox`, `radio`, `date`, `file`, `submit`) with clean accessible `<label>` wrappers and styled grids.
+- **Events Table**: A fully structured table featuring `<thead>`, `scope="col"` attributes, and `<time>` tags for machine-readable dates.
+- **Lists**:
+  - *Ordered List*: A 6-step roadmap detailing "Steps to Register".
+  - *Unordered List*: A 6-item list summarizing the "Benefits of Joining Societies".
+- **Multimedia Controls**: Built-in native `<audio>` and `<video>` tags referencing local WAV and MP4 samples with modern controls and fallback messages.
+- **Accessibility features**: Associated label tags, ARIA attributes, semantic markup, and a fully functional "Skip-to-content" bypass link.
+
+### 🎨 Task 3 — CSS Styling & Box Model
+- Full separation of concerns using an **external stylesheet** (`styles.css`).
+- Utilization of diverse selector patterns: element selectors, custom class definitions, unique ID references, grouping rules, pseudo-classes (`:hover`, `:focus-visible`, `:nth-child`), and pseudo-elements (`::before`, `::first-line`).
+- Rigorous demonstration of the **CSS Box Model** utilizing `margin`, `padding`, `border`, `width`, `height`, and `box-sizing: border-box`.
+
+### 📱 Task 4 — Layout & Responsiveness
+- **Flexbox Layouts**: Used to align navigation links, structure header bars, organize two-column schedules, and distribute footer columns.
+- **CSS Grid Layouts**: Implemented for the 3×3 society showcases, hero layout splits, and side-by-side form controls.
+- **Media Queries**: Fully responsive layouts operating smoothly across three custom breakpoints:
+  - `Mobile` (≤ 600px): Stacked structures and optimized text sizing.
+  - `Tablet` (601px - 991px): Hybrid columns and customized forms.
+  - `Desktop` (≥ 992px): Multi-column grids and wide displays.
 
 ---
 
 ## 📁 File Structure
 
-```
+```text
 Assignment-1_Rumi-House-Hub/
-├── index.html                 # Main HTML page
-├── styles.css                 # External CSS stylesheet
-├── Assignment1_Report.html    # Submission report (open in Word)
-├── README.md                  # This file
+├── index.html                     # Core HTML webpage
+├── styles.css                     # External CSS styles
+├── WAD_Assignment1_Report.docx    # Word document report
+├── README.md                      # This documentation file
 ├── media/
-│   ├── logo.svg               # Brand logo
-│   ├── hero.svg               # Hero illustration
-│   ├── rumi-intro.wav         # Audio sample (5 seconds)
-│   └── rumi-tour.mp4          # Video sample (5 seconds)
+│   ├── logo.svg                   # Brand Hexagon Logo
+│   ├── hero.svg                   # Hero Illustration
+│   ├── rumi-intro.wav             # WAV Audio Sample (5s)
+│   └── rumi-tour.mp4              # MP4 Video Sample (5s)
 └── screenshots/
-    ├── 01_header_hero.png
-    ├── 02_about_societies.png
-    ├── 03_events_table.png
-    ├── 04_registration_form.png
-    └── 05_multimedia_footer.png
+    ├── 01_header_hero.png         # Screenshot of the Hero Section
+    ├── 02_about_societies.png     # Screenshot of the 3x3 Grid
+    ├── 03_events_table.png        # Screenshot of the Event Table
+    ├── 04_registration_form.png   # Screenshot of the Form Fields
+    └── 05_multimedia_footer.png   # Screenshot of the Audio/Video & Footer
 ```
 
 ---
 
-## 🛠️ How to View
+## 🛠️ How to Run Locally
 
-1. Open `index.html` in any modern web browser (Chrome, Firefox, Edge)
-2. No server or build step required — it's pure HTML + CSS
-
----
-
-## 📝 Assignment Info
-
-| | |
-|---|---|
-| **Course** | Web Application Development (WAD) |
-| **Instructor** | Ammar Ahmad Khan |
-| **University** | Namal University, Mianwali |
-| **Due Date** | 20-March-2026 |
-
----
-
-> This project serves as the foundation for a complete web application to be developed throughout the semester.
+1. Open the project folder in your filesystem.
+2. Double-click the `index.html` file to open it directly in any modern web browser.
+3. No server or compilation steps required — pure, standard HTML5 & CSS3.
