@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Responsive web design</title>
+  <desc id="desc">Browser and mobile layout blocks for a responsive website.</desc>
+  <rect width="640" height="360" fill="#eef4ff"/>
+  <rect x="70" y="62" width="360" height="220" rx="14" fill="#fff" stroke="#b9c8f5" stroke-width="3"/>
+  <rect x="70" y="62" width="360" height="42" rx="14" fill="#dfe8ff"/>
+  <circle cx="98" cy="83" r="7" fill="#ef5b6a"/>
+  <circle cx="122" cy="83" r="7" fill="#e1aa32"/>
+  <circle cx="146" cy="83" r="7" fill="#24a66a"/>
+  <rect x="104" y="134" width="244" height="18" rx="9" fill="#172033"/>
+  <rect x="104" y="170" width="286" height="12" rx="6" fill="#8ea2c8"/>
+  <rect x="104" y="196" width="210" height="12" rx="6" fill="#8ea2c8"/>
+  <rect x="104" y="232" width="82" height="30" rx="8" fill="#1f5eff"/>
+  <rect x="456" y="116" width="112" height="178" rx="18" fill="#fff" stroke="#b9c8f5" stroke-width="3"/>
+  <rect x="478" y="148" width="68" height="12" rx="6" fill="#172033"/>
+  <rect x="478" y="178" width="68" height="10" rx="5" fill="#8ea2c8"/>
+  <rect x="478" y="202" width="48" height="10" rx="5" fill="#8ea2c8"/>
+  <rect x="478" y="238" width="68" height="28" rx="8" fill="#0b8f87"/>
+</svg>

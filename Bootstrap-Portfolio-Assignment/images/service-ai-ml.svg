@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">AI and machine learning prototype</title>
+  <desc id="desc">Connected nodes representing an AI prototype workflow.</desc>
+  <rect width="640" height="360" fill="#e5f5f3"/>
+  <g fill="none" stroke="#8fcac4" stroke-width="4">
+    <path d="M184 178h104M352 178h104M250 120l74 58M250 236l74-58M390 120l-66 58M390 236l-66-58"/>
+  </g>
+  <g fill="#fff" stroke="#0b8f87" stroke-width="4">
+    <circle cx="164" cy="178" r="42"/>
+    <circle cx="320" cy="178" r="54"/>
+    <circle cx="476" cy="178" r="42"/>
+    <circle cx="244" cy="112" r="32"/>
+    <circle cx="244" cy="244" r="32"/>
+    <circle cx="396" cy="112" r="32"/>
+    <circle cx="396" cy="244" r="32"/>
+  </g>
+  <g fill="#172033" font-family="Arial, sans-serif" font-size="30" font-weight="700" text-anchor="middle">
+    <text x="164" y="188">In</text>
+    <text x="320" y="188">ML</text>
+    <text x="476" y="188">Out</text>
+  </g>
+</svg>

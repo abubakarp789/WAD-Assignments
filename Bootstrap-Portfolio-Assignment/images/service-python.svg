@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Python automation</title>
+  <desc id="desc">Terminal window with automation steps.</desc>
+  <rect width="640" height="360" fill="#eef4ff"/>
+  <rect x="92" y="68" width="456" height="224" rx="16" fill="#172033"/>
+  <rect x="92" y="68" width="456" height="46" rx="16" fill="#24314c"/>
+  <circle cx="122" cy="91" r="7" fill="#ef5b6a"/>
+  <circle cx="146" cy="91" r="7" fill="#e1aa32"/>
+  <circle cx="170" cy="91" r="7" fill="#24a66a"/>
+  <text x="128" y="156" fill="#fff" font-family="Consolas, monospace" font-size="22">$ python automate.py</text>
+  <text x="128" y="198" fill="#7de3d8" font-family="Consolas, monospace" font-size="20">cleaning data...</text>
+  <text x="128" y="232" fill="#7de3d8" font-family="Consolas, monospace" font-size="20">writing report...</text>
+  <text x="128" y="266" fill="#fff4a3" font-family="Consolas, monospace" font-size="20">done</text>
+</svg>
