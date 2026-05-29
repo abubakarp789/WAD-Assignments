@@ -38,7 +38,7 @@ This project is a fully responsive Bootstrap 5 portfolio website for Abu Bakar. 
 
 ### Task 3: Forms and Input Controls
 
-- Registration/contact form includes full name, email address, password, gender selection, country selection, and terms checkbox.
+- Registration form includes full name, email address, password, gender selection, country selection, and terms checkbox.
 - Fields use Bootstrap form classes and grid layout.
 - Validation feedback is shown with Bootstrap validation styling.
 
@@ -60,7 +60,7 @@ This project is a fully responsive Bootstrap 5 portfolio website for Abu Bakar. 
 ### Task 7: Mini Website Development
 
 - The final website is a complete personal portfolio.
-- It includes hero, about, skills, projects, services, utilities, contact form, and footer sections.
+- It includes hero, about, skills, projects, services, utilities, registration form, and footer sections.
 - The interface is designed to be consistent, modern, and responsive.
 
 ## Screenshots
@@ -89,9 +89,9 @@ This project is a fully responsive Bootstrap 5 portfolio website for Abu Bakar. 
 
 ![Bootstrap Utilities Showcase](screenshots/06_utilities_showcase.png)
 
-### 7. Contact Form Validation
+### 7. Registration Form Validation
 
-![Contact Form Validation](screenshots/07_contact_validation.png)
+![Registration Form Validation](screenshots/07_contact_validation.png)
 
 ### 8. Footer Details
 
