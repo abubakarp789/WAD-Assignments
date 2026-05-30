@@ -11,3 +11,8 @@ Desktop.ini
 
 .hallmark/
 
+node_modules/
+scratch/
+tasks/
+
+
