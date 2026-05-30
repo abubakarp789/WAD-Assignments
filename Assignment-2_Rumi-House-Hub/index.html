@@ -1,118 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rumi House Hub - Assignment 2</title>
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Link to custom CSS -->
-    <link href="style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rumi House Hub - Student Engagement Portal | Namal University</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Official student societies, co-curricular events, and newsletters engagement portal for Rumi House, Namal University, Mianwali.">
+  <meta name="author" content="Abu Bakar">
+  
+  <!-- Bootstrap 5.3.3 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons via CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Styling override sheet -->
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header with Navbar and Dropdown -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark rumi-bg-dark">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="#">Rumi House Hub</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#societies">Our Societies</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                                Societies
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Namal Idea Club</a></li>
-                                <li><a class="dropdown-item" href="#">Literary & Debating Society</a></li>
-                                <li><a class="dropdown-item" href="#">Sports & Adventure Club</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Main Content -->
-    <main class="container my-5 flex-grow-1">
-        
-        <!-- Toggle Section (DOM Manipulation) -->
-        <section id="home" class="mb-5 text-center">
-            <h1 class="display-4 fw-bold text-primary">Welcome to Rumi House Hub</h1>
-            <p class="lead text-muted">The official portal for Rumi House students at Namal University, Mianwali.</p>
-            <button id="toggleBtn" class="btn btn-primary mt-2">Discover Our Vision</button>
-            <div id="infoSection" class="mt-4 p-4 custom-box shadow-sm mx-auto" style="display: none; max-width: 600px;">
-                <h4 class="text-secondary">About Rumi House</h4>
-                <p>Rumi House is dedicated to fostering excellence, brotherhood, and continuous learning among Namal University students. We organize events, sports, and technical workshops.</p>
-                <button id="colorBtn" class="btn btn-outline-secondary btn-sm mt-2">Change House Theme Color</button>
-            </div>
-        </section>
-
-        <!-- API Data Section (Local JSON) -->
-        <section id="societies" class="mb-5 py-3">
-            <h2 class="mb-4 border-bottom pb-2">Explore Rumi House Societies</h2>
-            <button id="fetchBtn" class="btn btn-success mb-3">Load Societies</button>
-            
-            <!-- Loading Spinner -->
-            <div id="spinner" class="spinner-border text-primary" style="display: none;" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            
-            <div class="row g-4" id="dataContainer">
-                <!-- Cards will be added here dynamically by JS -->
-            </div>
-        </section>
-
-        <!-- Contact Form Section -->
-        <section id="contact" class="mb-5 row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card shadow-sm border-0">
-                    <div class="card-header rumi-bg-dark text-white text-center py-3">
-                        <h3 class="mb-0">Contact Rumi House Council</h3>
-                    </div>
-                    <div class="card-body p-4 bg-white">
-                        <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="name" class="form-label fw-bold">Full Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="E.g. Ali Khan">
-                                <div id="nameError" class="error-text">Name must be at least 3 characters.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label fw-bold">Student Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="student@namal.edu.pk">
-                                <div id="emailError" class="error-text">Please enter a valid email address.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label fw-bold">Your Message</label>
-                                <textarea class="form-control" id="message" rows="4" placeholder="How can we help?"></textarea>
-                                <div id="msgError" class="error-text">Message cannot be empty.</div>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100 py-2">Send Message</button>
-                        </form>
-                        <!-- Success Message -->
-                        <div id="successMsg" class="alert alert-success mt-3" style="display: none;">Thank you! The council has received your message.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="rumi-bg-dark text-white text-center py-4 mt-auto">
-        <div class="container">
-            <p class="mb-0">&copy; 2026 Rumi House Hub - Namal University. Built for Web Application Development Assignment.</p>
+  <!-- Navigation Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#" id="main-brand-logo">
+          <i class="bi bi-mortarboard-fill me-2 text-warning"></i>
+          <span>RUMI HOUSE HUB</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rumiNavbar" aria-controls="rumiNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="rumiNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home" id="nav-link-home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about" id="nav-link-about">About Rumi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#societies" id="nav-link-societies">Societies</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSocieties" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Quick Links
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownSocieties">
+                <li><a class="dropdown-item" href="#societies?filter=Rumi%20Internal%20Club">Rumi Clubs</a></li>
+                <li><a class="dropdown-item" href="#societies?filter=Namal%20University%20Society">Namal Societies</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#events">Upcoming Events</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#events" id="nav-link-events">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#news" id="nav-link-news">News & Articles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact" id="nav-link-contact">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+              <a href="#contact" class="btn btn-primary btn-sm px-3 text-dark fw-bold" id="btn-quick-join">Join Portal</a>
+            </li>
+          </ul>
         </div>
-    </footer>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Link to custom JS -->
-    <script src="script.js"></script>
+  <!-- Spacer to prevent content overlapping fixed navbar -->
+  <div style="height: 75px;" id="home"></div>
+
+  <!-- Hero & Spotlight Area -->
+  <section class="hero-section py-5 d-flex align-items-center">
+    <div class="container my-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7 text-center text-lg-start animate-fade-in">
+          <div class="badge bg-badge-upcoming px-3 py-2 mb-3 fs-7" id="hero-badge">
+            <i class="bi bi-megaphone-fill me-2 text-warning"></i>SPOTLIGHT EVENT
+          </div>
+          <h1 class="display-4 fw-bold mb-3">Rumi House Hub</h1>
+          <p class="lead mb-4">Empowering the student body of Rumi House at Namal University. Discover active societies, register for co-curricular events, access newsletters, and verify physical check-ins instantly.</p>
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+            <a href="#societies" class="btn btn-primary btn-lg" id="hero-cta-explore">Explore Societies</a>
+            <a href="#events" class="btn btn-outline-light-custom btn-lg" id="hero-cta-events">View Scheduled Events</a>
+          </div>
+        </div>
+        <div class="col-lg-5 animate-fade-in">
+          <!-- Featured Spotlight Card -->
+          <div class="card border-0 shadow-lg p-3 text-dark bg-white rounded-4 position-relative" id="spotlight-featured-card">
+            <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger py-2 px-3" id="spotlight-hot-badge">
+              Featured Activity
+            </span>
+            <div class="card-body pt-4">
+              <h5 class="text-muted text-uppercase small fw-bold mb-1" id="spotlight-society">Namal Sports & Adventure Club (NSAC)</h5>
+              <h4 class="card-title fw-bold text-dark mb-2" id="spotlight-title">Inter-House Sports Gala</h4>
+              <p class="card-text text-muted mb-3" id="spotlight-desc">The ultimate sports competition where all university houses compete in cricket, football, basketball, and track events. Join to represent Rumi House and claim the championship shield!</p>
+              
+              <div class="d-flex flex-column gap-2 mb-3 bg-light p-3 rounded-3 border">
+                <div class="d-flex align-items-center small text-muted">
+                  <i class="bi bi-calendar-event me-2 text-success"></i>
+                  <span id="spotlight-date">June 15, 2026 at 09:00 AM</span>
+                </div>
+                <div class="d-flex align-items-center small text-muted">
+                  <i class="bi bi-geo-alt me-2 text-danger"></i>
+                  <span id="spotlight-location">Namal Sports Complex</span>
+                </div>
+                <div class="d-flex align-items-center small text-muted">
+                  <i class="bi bi-people me-2 text-primary"></i>
+                  <span>Capacity: 100 Students (<span id="spotlight-registered">76</span> registered)</span>
+                </div>
+              </div>
+              
+              <button class="btn btn-primary w-100 text-dark" id="spotlight-rsvp-btn" data-bs-toggle="modal" data-bs-target="#eventModal">
+                <i class="bi bi-pencil-square me-2"></i>RSVP & Generate QR Code
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="flex-grow-1">
+    
+    <!-- About Rumi House Identity -->
+    <section id="about" class="py-5 bg-white">
+      <div class="container my-3">
+        <div class="text-center mb-5">
+          <span class="card-category-badge">House Identity</span>
+          <h2 class="fw-bold">Rumi House Identity & Vision</h2>
+          <div class="mx-auto bg-warning" style="width: 60px; height: 3px;"></div>
+        </div>
+        
+        <div class="row align-items-center g-4 justify-content-center">
+          <div class="col-lg-6">
+            <h3 class="fw-bold text-success mb-3">Foster Excellence, Brotherhood & Character</h3>
+            <p class="text-muted mb-4">Rumi House, named after the prominent Sufi poet Jalal-ad-Din Muhammad Rumi, represents academic excellence, spiritual synthesis, deep compassion, and continuous learning among Namal University students.</p>
+            
+            <div class="d-flex gap-3 mb-4">
+              <button id="toggleBtn" class="btn btn-outline-primary" aria-expanded="false" aria-controls="infoSection">
+                Discover Our Vision
+              </button>
+              <button id="colorBtn" class="btn btn-primary text-dark" style="display: none;">
+                <i class="bi bi-palette-fill me-2"></i>Randomize Accent Color
+              </button>
+            </div>
+
+            <!-- Dynamic height Info Box widget -->
+            <div id="infoSection" class="info-box-toggle card border-0 bg-light p-4 rounded-4 shadow-sm" style="display: none;">
+              <h4 class="text-success fw-bold mb-3"><i class="bi bi-compass-fill me-2"></i>The Rumi House Council Vision</h4>
+              <p class="text-muted mb-3">Our council organizes academic seminars, peer tutoring projects, local social-impact outreach drives, and sports challenges to foster holistic student development.</p>
+              <div class="d-flex align-items-center gap-3">
+                <div class="bg-success text-white rounded-circle p-2 d-inline-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <i class="bi bi-award-fill"></i>
+                </div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Chief Patron Guidance</h6>
+                  <p class="small text-muted mb-0">Rumi House Council, Namal University</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="p-4 rounded-4 bg-light shadow-sm text-center">
+              <i class="bi bi-quote fs-1 text-warning mb-3 d-block"></i>
+              <blockquote class="blockquote fs-5 font-italic text-success fw-bold mb-3">
+                "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself."
+              </blockquote>
+              <figcaption class="blockquote-footer mt-1 text-muted">
+                Jalal-ad-Din Muhammad Rumi
+              </figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Societies Directory Portal -->
+    <section id="societies" class="py-5 bg-light position-relative">
+      <div class="container my-3">
+        
+        <div class="text-center mb-5">
+          <span class="card-category-badge">Societies Directory</span>
+          <h2 class="fw-bold">Active Societies & Internal Clubs</h2>
+          <div class="mx-auto bg-warning" style="width: 60px; height: 3px;"></div>
+          <p class="text-muted mt-3">Browse and join the Rumi House internal clubs or Namal University societies.</p>
+        </div>
+
+        <!-- Search and Filters bar -->
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-10">
+            <div class="card p-3 shadow-sm border-0 rounded-3 bg-white">
+              <div class="row g-3 align-items-center">
+                <div class="col-lg-5">
+                  <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-search text-success"></i></span>
+                    <input type="text" id="societySearchInput" class="form-control bg-light border-start-0" placeholder="Search society by name or keyword...">
+                  </div>
+                </div>
+                <div class="col-lg-7">
+                  <div class="d-flex flex-wrap gap-2 justify-content-lg-end" id="societyCategoryFilters">
+                    <button class="btn btn-category active" data-filter="all">All Directory</button>
+                    <button class="btn btn-category" data-filter="literary">Literary</button>
+                    <button class="btn btn-category" data-filter="sports">Sports</button>
+                    <button class="btn btn-category" data-filter="social">Social</button>
+                    <button class="btn btn-category" data-filter="technical">Technical</button>
+                    <button class="btn btn-category" data-filter="arts">Arts</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Grid Container -->
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <div class="position-relative min-vh-20" style="min-height: 200px;">
+              <!-- Loading spinner overlay -->
+              <div class="loading-spinner-overlay" id="societies-loader">
+                <div class="spinner-border spinner-custom" role="status">
+                  <span class="visually-hidden">Loading societies...</span>
+                </div>
+              </div>
+              
+              <!-- Grid Content -->
+              <div class="row g-4" id="societies-grid">
+                <!-- Javascript will render cards here dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-5 bg-white">
+      <div class="container my-3">
+        
+        <div class="text-center mb-5">
+          <span class="card-category-badge">Events Schedule</span>
+          <h2 class="fw-bold">Co-Curricular Events Feed</h2>
+          <div class="mx-auto bg-warning" style="width: 60px; height: 3px;"></div>
+          <p class="text-muted mt-3">Track upcoming activities and past memories. Register for events to record attendance.</p>
+        </div>
+
+        <!-- Event Status Filters -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-10 text-center">
+            <div class="btn-group p-1 bg-light rounded-pill border" role="group" aria-label="Event status filter" id="eventStateFilters">
+              <button type="button" class="btn btn-category active border-0 px-4 py-2 rounded-pill" data-state="all">All Events</button>
+              <button type="button" class="btn btn-category border-0 px-4 py-2 rounded-pill" data-state="upcoming">Upcoming Activities</button>
+              <button type="button" class="btn btn-category border-0 px-4 py-2 rounded-pill" data-state="past">Past Memories</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Events Grid Container -->
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <div class="position-relative" style="min-height: 200px;">
+              <!-- Loading spinner overlay -->
+              <div class="loading-spinner-overlay" id="events-loader">
+                <div class="spinner-border spinner-custom" role="status">
+                  <span class="visually-hidden">Loading events...</span>
+                </div>
+              </div>
+              
+              <!-- Grid/Timeline Content -->
+              <div class="row g-4" id="events-grid">
+                <!-- JavaScript will render cards here dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- News & Publications Section -->
+    <section id="news" class="py-5 bg-light">
+      <div class="container my-3">
+        
+        <div class="text-center mb-5">
+          <span class="card-category-badge">Publications</span>
+          <h2 class="fw-bold">Rumi House Newsletter & Bulletins</h2>
+          <div class="mx-auto bg-warning" style="width: 60px; height: 3px;"></div>
+          <p class="text-muted mt-3">Read current newsletters, student bulletins, and official visits review.</p>
+        </div>
+
+        <!-- News Grid Container -->
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <div class="position-relative" style="min-height: 200px;">
+              <!-- Loading spinner overlay -->
+              <div class="loading-spinner-overlay" id="news-loader">
+                <div class="spinner-border spinner-custom" role="status">
+                  <span class="visually-hidden">Loading news...</span>
+                </div>
+              </div>
+              
+              <div class="row g-4" id="news-grid">
+                <!-- Javascript will render cards here dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact & Feedback Section -->
+    <section id="contact" class="py-5 bg-white">
+      <div class="container my-3">
+        
+        <div class="text-center mb-5">
+          <span class="card-category-badge">Contact Portal</span>
+          <h2 class="fw-bold">Contact Rumi House Council</h2>
+          <div class="mx-auto bg-warning" style="width: 60px; height: 3px;"></div>
+          <p class="text-muted mt-3">Have feedback or suggestions? Drop a line to our student council coordinators.</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="form-section-card border-0">
+              <div class="form-header text-center">
+                <h3 class="mb-1"><i class="bi bi-envelope-paper-fill me-2 text-warning"></i>Council Inquiries</h3>
+                <p class="small mb-0 text-white-50">Standard response time is within 24 working hours.</p>
+              </div>
+              <div class="card-body p-4 p-md-5">
+                <form id="contactForm" novalidate>
+                  
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                      <label for="contactName" class="form-label fw-bold">Full Name <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="contactName" placeholder="E.g., Ali Khan" required>
+                      <div class="validation-success-text" id="contactNameSuccess"><i class="bi bi-check-circle-fill me-1"></i> Looks good!</div>
+                      <div class="validation-error-text" id="contactNameError">Please enter your full name (minimum 3 characters).</div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                      <label for="contactEmail" class="form-label fw-bold">Namal Student Email <span class="text-danger">*</span></label>
+                      <input type="email" class="form-control" id="contactEmail" placeholder="username@namal.edu.pk" required>
+                      <div class="validation-success-text" id="contactEmailSuccess"><i class="bi bi-check-circle-fill me-1"></i> Verified Namal domain.</div>
+                      <div class="validation-error-text" id="contactEmailError">Please enter a valid student email ending in @namal.edu.pk.</div>
+                    </div>
+                  </div>
+
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                      <label for="contactRegNo" class="form-label fw-bold">Registration Number <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" id="contactRegNo" placeholder="E.g., NUM-BSCS-2022-41" required>
+                      <div class="validation-success-text" id="contactRegNoSuccess"><i class="bi bi-check-circle-fill me-1"></i> Valid format verified.</div>
+                      <div class="validation-error-text" id="contactRegNoError">Format must match NUM-AAAA-YYYY-NN (e.g. NUM-BSCS-2022-41).</div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                      <label for="contactSubject" class="form-label fw-bold">Subject <span class="text-danger">*</span></label>
+                      <select class="form-select" id="contactSubject" required>
+                        <option value="" disabled selected>Choose a category...</option>
+                        <option value="society">Society Joining Request</option>
+                        <option value="event">Event Coordination Inquiry</option>
+                        <option value="feedback">General Council Feedback</option>
+                        <option value="newsletter">Newsletter Contribution</option>
+                      </select>
+                      <div class="validation-success-text" id="contactSubjectSuccess"><i class="bi bi-check-circle-fill me-1"></i> Subject chosen.</div>
+                      <div class="validation-error-text" id="contactSubjectError">Please select a subject query category.</div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <label for="contactMessage" class="form-label fw-bold">Your Message <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="contactMessage" rows="5" placeholder="Provide complete details about your inquiry..." required></textarea>
+                    <div class="validation-success-text" id="contactMessageSuccess"><i class="bi bi-check-circle-fill me-1"></i> Input received.</div>
+                    <div class="validation-error-text" id="contactMessageError">Message content cannot be empty (minimum 10 characters required).</div>
+                  </div>
+
+                  <div class="d-grid mb-2">
+                    <button type="submit" class="btn btn-primary py-3 text-dark fw-bold" id="contactSubmitBtn">
+                      <i class="bi bi-send-fill me-2"></i>Send Message to Council
+                    </button>
+                  </div>
+                </form>
+
+                <!-- Success Alert Container -->
+                <div class="alert alert-custom-success mt-4 d-flex align-items-center animate-fade-in" id="contactSuccessAlert" style="display: none !important;">
+                  <i class="bi bi-patch-check-fill fs-3 me-3 text-success"></i>
+                  <div>
+                    <h5 class="alert-heading mb-1 fw-bold">Inquiry Sent Successfully!</h5>
+                    <p class="mb-0 small">Thank you! Your message has been safely recorded by the Rumi House Council. We will follow up via your verified student email.</p>
+                  </div>
+                </div>
+
+                <!-- Error Alert Container -->
+                <div class="alert alert-custom-danger mt-4 d-flex align-items-center animate-fade-in" id="contactErrorAlert" style="display: none !important;">
+                  <i class="bi bi-exclamation-triangle-fill fs-3 me-3"></i>
+                  <div>
+                    <h5 class="alert-heading mb-1 fw-bold">Validation Error Encountered</h5>
+                    <p class="mb-0 small">Please review the form input controls highlighted in red above and correct them before submitting.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footers Section -->
+  <footer class="footer-custom pt-5 mt-auto">
+    <div class="container pb-4">
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6">
+          <h5 class="d-flex align-items-center"><i class="bi bi-mortarboard-fill text-warning me-2"></i>RUMI HOUSE PORTAL</h5>
+          <p class="small text-white-50 mt-3">An interactive digital gateway designed to streamline university extracurricular life, sports championships, co-curricular workshops, newsletters, and student registries at Namal.</p>
+          <div class="d-flex gap-3 fs-5 mt-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>QUICK SECTIONS</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 mt-3">
+            <li><a href="#home"><i class="bi bi-chevron-right text-warning small me-1"></i> Home Dashboard</a></li>
+            <li><a href="#about"><i class="bi bi-chevron-right text-warning small me-1"></i> Rumi House Values</a></li>
+            <li><a href="#societies"><i class="bi bi-chevron-right text-warning small me-1"></i> Societies Registry</a></li>
+            <li><a href="#events"><i class="bi bi-chevron-right text-warning small me-1"></i> Co-Curricular Feed</a></li>
+            <li><a href="#news"><i class="bi bi-chevron-right text-warning small me-1"></i> News Archive</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-12">
+          <h5>COURSE CONTEXT</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 mt-3 text-white-50">
+            <li><strong class="text-white">Course:</strong> Web Application Development (CS-370)</li>
+            <li><strong class="text-white">Instructor:</strong> Ammar Ahmad Khan</li>
+            <li><strong class="text-white">Student:</strong> Abu Bakar (NUM-BSCS-2022-41)</li>
+            <li><strong class="text-white">Institution:</strong> Namal University, Mianwali</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom py-3 text-center">
+      <div class="container">
+        <p class="mb-0 small">&copy; 2026 Rumi House Hub - Namal University. Developed by Abu Bakar. Built with Bootstrap 5.3.3 & Vanilla JavaScript ES6.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- MODAL DIALOG TEMPLATES (DYNAMICALLY LOADED) -->
+  <!-- ========================================== -->
+
+  <!-- 1. Society Detail Modal -->
+  <div class="modal fade modal-custom" id="societyModal" tabindex="-1" aria-labelledby="societyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title d-flex align-items-center" id="societyModalLabel">
+            <i class="bi bi-info-circle-fill me-2 text-warning"></i>
+            <span id="societyModalName">Society Details</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-dark">
+          <div class="row align-items-center mb-4">
+            <div class="col-sm-3 text-center mb-3 mb-sm-0">
+              <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <i class="bi bi-people-fill fs-1 text-warning"></i>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <span class="card-category-badge mb-2 d-inline-block" id="societyModalType">Rumi Internal Club</span>
+              <h3 class="fw-bold mb-0 text-success" id="societyModalTitle">Rumi Debating Club</h3>
+            </div>
+          </div>
+          
+          <div class="row g-4">
+            <div class="col-md-7">
+              <h5 class="fw-bold border-bottom pb-2 text-success">Mission & Focus</h5>
+              <p class="text-muted" id="societyModalDescription">Detailed description goes here...</p>
+            </div>
+            <div class="col-md-5">
+              <div class="card p-3 border rounded-3 bg-white">
+                <h5 class="fw-bold text-success mb-3 border-bottom pb-2">Administrative Roster</h5>
+                <ul class="list-unstyled d-flex flex-column gap-2 mb-0 text-muted small">
+                  <li><strong class="text-dark">Faculty Patron:</strong> <span id="societyModalPatron">Faculty Patron</span></li>
+                  <li><strong class="text-dark">Society Coordinator:</strong> <span id="societyModalCoordinator">Society Coordinator</span></li>
+                  <li><strong class="text-dark">Executive Leads:</strong> <span id="societyModalLeads">Executive Lead, Associate Lead</span></li>
+                  <li><strong class="text-dark">Active Headcount:</strong> <span id="societyModalMembers">42 Members</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close Window</button>
+          <button type="button" class="btn btn-primary text-dark" id="societyModalJoinBtn">
+            <i class="bi bi-plus-circle me-1"></i>Send Membership Request
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Event RSVP & Detail Modal -->
+  <div class="modal fade modal-custom" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title d-flex align-items-center" id="eventModalLabel">
+            <i class="bi bi-calendar2-check-fill me-2 text-warning"></i>
+            <span id="eventModalTitle">Event Registration</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-dark">
+          <span class="card-type-badge mb-2" id="eventModalType">sports</span>
+          <h3 class="fw-bold text-success mb-3" id="eventModalMainTitle">Inter-House Sports Gala</h3>
+          <p class="text-muted mb-4" id="eventModalDescription">Event detailed specifications...</p>
+          
+          <div class="row g-3 mb-4 bg-light p-3 rounded border">
+            <div class="col-sm-4 text-center border-end border-sm-0">
+              <i class="bi bi-geo-alt-fill text-danger fs-3 d-block mb-1"></i>
+              <span class="small text-muted d-block">Venue</span>
+              <strong class="text-dark fs-7" id="eventModalLocation">Namal Sports Complex</strong>
+            </div>
+            <div class="col-sm-4 text-center border-end border-sm-0">
+              <i class="bi bi-calendar3 text-success fs-3 d-block mb-1"></i>
+              <span class="small text-muted d-block">Scheduled Date</span>
+              <strong class="text-dark fs-7" id="eventModalDate">2026-06-15 at 10:00 AM</strong>
+            </div>
+            <div class="col-sm-4 text-center">
+              <i class="bi bi-people-fill text-primary fs-3 d-block mb-1"></i>
+              <span class="small text-muted d-block">Seat Constraints</span>
+              <strong class="text-dark fs-7"><span id="eventModalRegistered">76</span> / <span id="eventModalCapacity">100</span> Registered</strong>
+            </div>
+          </div>
+
+          <!-- RSVP Form Area (Only displays for UPCOMING events) -->
+          <div id="eventRsvpFormContainer">
+            <h5 class="fw-bold text-success border-bottom pb-2 mb-3"><i class="bi bi-pencil-square me-2"></i>Secure RSVP Registry</h5>
+            <form id="rsvpForm" novalidate>
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="rsvpEmail" class="form-label fw-bold small text-muted">Namal Student Email</label>
+                  <input type="email" class="form-control" id="rsvpEmail" placeholder="student@namal.edu.pk" required>
+                  <div class="validation-success-text" id="rsvpEmailSuccess"><i class="bi bi-check-circle-fill me-1"></i> Email validated.</div>
+                  <div class="validation-error-text" id="rsvpEmailError">Please enter a valid student email ending in @namal.edu.pk.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="rsvpRegNo" class="form-label fw-bold small text-muted">Registration Number</label>
+                  <input type="text" class="form-control" id="rsvpRegNo" placeholder="NUM-BSCS-2022-41" required>
+                  <div class="validation-success-text" id="rsvpRegNoSuccess"><i class="bi bi-check-circle-fill me-1"></i> Format validated.</div>
+                  <div class="validation-error-text" id="rsvpRegNoError">Format must match NUM-AAAA-YYYY-NN (e.g. NUM-BSCS-2022-41).</div>
+                </div>
+              </div>
+              
+              <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mt-3 pt-2 border-top">
+                <span class="small text-muted"><span class="text-danger">*</span> Email and RegNo verification checks required.</span>
+                <button type="submit" class="btn btn-primary text-dark fw-bold" id="rsvpSubmitBtn">
+                  Confirm RSVP & Join Event
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Past Event Alert (Displays instead of RSVP for PAST events) -->
+          <div id="eventPastAlertContainer" style="display: none;">
+            <div class="alert alert-custom-success text-center border-0 p-4 shadow-sm mb-0">
+              <i class="bi bi-calendar-x fs-1 text-success mb-2 d-block"></i>
+              <h5 class="fw-bold mb-2">This Event Has Successfully Concluded</h5>
+              <p class="mb-0 small text-white-50">This activity occurred in the past. Online registration and check-in QR code generations are closed for finalized events.</p>
+            </div>
+          </div>
+
+          <!-- Dynamic QR Code Container Display (Hidden initially, shown after RSVP success) -->
+          <div class="qr-container-box" id="eventQrContainer">
+            <h5 class="fw-bold text-success mb-2"><i class="bi bi-qr-code-scan me-2 text-warning"></i>Attendance QR Check-in Code</h5>
+            <p class="small text-muted mb-3">Present this code at the physical venue door. Staff will scan it to verify and record your involvement.</p>
+            
+            <div class="position-relative d-inline-block mb-3">
+              <img id="eventQrImage" src="" class="qr-image img-fluid" alt="Attendance Check-in QR Code">
+              <!-- QR Loading spinner inside box -->
+              <div class="spinner-border spinner-border-sm text-success position-absolute top-50 start-50 translate-middle" id="qr-loading-spinner" role="status" style="display: none;">
+                <span class="visually-hidden">Generating QR...</span>
+              </div>
+            </div>
+            
+            <div class="bg-white p-2 border rounded max-width-300 mx-auto mt-2 mb-1">
+              <span class="small text-muted d-block text-uppercase fw-bold ls-1 font-monospace">Check-in Reference Token</span>
+              <code class="fs-6 fw-bold text-success font-monospace" id="eventQrToken">rumi_secure_session_token_xyz</code>
+            </div>
+            <p class="small text-muted font-italic mb-0 mt-2">Scan at the venue to record attendance.</p>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close Window</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. News Article Preview Modal -->
+  <div class="modal fade modal-custom" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title d-flex align-items-center" id="newsModalLabel">
+            <i class="bi bi-newspaper me-2 text-warning"></i>
+            <span id="newsModalTitleHeader">Rumi Publications</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-dark">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="card-category-badge mb-0" id="newsModalCategory">newsletter</span>
+            <span class="small text-muted font-monospace" id="newsModalDate">2026-05-20</span>
+          </div>
+          <h3 class="fw-bold text-success mb-3" id="newsModalTitle">Newsletter Title</h3>
+          
+          <div class="d-flex align-items-center gap-2 mb-4 text-muted small bg-light p-2 border rounded">
+            <i class="bi bi-person-fill text-success"></i>
+            <span>Published By: <strong class="text-dark" id="newsModalAuthor">Editorial Board</strong></span>
+          </div>
+          
+          <div class="fs-6 text-muted lh-base" id="newsModalContent">
+            Article body text will dynamically load here...
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close Window</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS bundle with Popper via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <!-- Custom JS Operations -->
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 # Rumi House Hub — WAD Assignment 2
 
 An interactive student engagement portal for **Rumi House** at Namal University, Mianwali.  
-Upgraded from static HTML5/CSS3 to a fully interactive and responsive web application leveraging **Bootstrap 5**, **Vanilla JavaScript (ES6+)**, and **Asynchronous API data fetching**.
+Upgraded from a static HTML/CSS prototype to a fully interactive and responsive web application leveraging **Bootstrap 5.3.3**, **Vanilla JavaScript (ES6+)**, and **Asynchronous API data fetching** with local fallbacks.
 
 ---
 
@@ -9,61 +9,56 @@ Upgraded from static HTML5/CSS3 to a fully interactive and responsive web applic
 
 | Field | Detail |
 |---|---|
-| **Course** | Web Application Development (WAD) |
+| **Course** | Web Application Development (WAD) — CS-370 |
 | **Department** | Department of Computer Science |
 | **Institution** | Namal University, Mianwali |
 | **Instructor** | Ammar Ahmad Khan |
 | **Student Name** | Abu Bakar |
 | **Roll Number** | NUM-BSCS-2022-41 |
-| **Due Date** | 03-May-2026 |
-
----
-
-## 📸 Visual Previews
-
-### 1. Bootstrap Header & Toggled Vision Block
-![Bootstrap Header & Vision](screenshots/01_header_navbar_vision.png)
-
-### 2. Dynamically Rendered Cards via Fetch API
-![Dynamic Societies Cards](screenshots/02_dynamic_societies.png)
-
-### 3. JavaScript Form Validation Error States
-![Validation Feedback](screenshots/03_contact_validation.png)
 
 ---
 
 ## 🚀 Key Implemented Features
 
-### 📦 Task 1: Bootstrap Setup & Grid Integration
-- **Bootstrap 5 Setup**: Successfully integrated Bootstrap 5 via stable CDN links for both responsive CSS rules in the `<head>` and the JS Bundle right before the closing `</body>` tag.
-- **Responsive Layout**: Designed with responsive grid classes (`.col-12`, `.col-md-6`, `.col-lg-4`) ensuring optimal display adaptations on mobile phones, tablets, and desktop workstations.
+### 🎨 1. Bootstrap 5.3.3 Layout Upgrade & Overrides
+- **Grid Layout**: Designed with responsive grid classes (`.col-12`, `.col-md-6`, `.col-lg-4`, `.g-4`) ensuring beautiful layout adjustments on mobile, tablet, and desktop viewports with zero horizontal scrolling.
+- **Responsive Navigation**: Collapsible brand-aligned navbar (`.navbar-expand-lg`) featuring dropdown links, navigation selectors, and a custom gold active-state line-border indicator.
+- **Namal-Inspired Academic Branding Overrides**: 
+  - Forest Green (`#006b35` / `#005128` / `#e6f4ec`) is applied to headers, navbars, cards, and primary actions.
+  - Warm Gold (`#f5c400` / `#d9a900` / `#fff7cc`) is applied as outlines, active tags, and highlight buttons.
+  - Custom overrides ensure standard Bootstrap classes like `.btn-primary` and input focus rings fit Namal's distinctive identity instead of generic layouts.
+- **Glassmorphic Cards**: Implemented high-fidelity `.custom-card` components with drop-shadows and CSS hover transitions that lift the element (`transform: translateY(-6px)`) and apply a golden border glow.
 
-### 🎨 Task 2: UI Design & Bootstrap Components
-- **Responsive Navigation**: Implemented an expandable `.navbar-expand-lg` header featuring a functional brand, link sequences, dropdown folders, and a native hamburger toggler for mobile users.
-- **Styled Cards & Buttons**: Structured the main interactive components inside shadowed `.card` containers and integrated multiple distinct button styles matching their relative visual weights (`.btn-primary`, `.btn-success`, `.btn-outline-primary`).
+### 🌐 2. Local JSON Data Loading & CORS Fallback
+- **Asynchronous Loading**: Client-side JavaScript dynamically fetches the `data.json` database on page load using the Fetch API and `async/await` syntax.
+- **CORS `file:///` Protocol Fallback**: 
+  - Direct browser opening via double-clicking `index.html` blocks `fetch()` due to security policies.
+  - `script.js` intercepts this condition using `window.location.protocol === 'file:'` and seamlessly falls back to a high-fidelity local JS object array representing the same database content.
+  - This ensures **100% functionality** when grading offline by simply double-clicking the file!
+- **State Handling**: Animated loading spinners (`.spinner-border`) show during fetching, and safe try-catch blocks display clear `.alert-danger` banners if files fail to load.
 
-### ⚙️ Task 3: Forms & Customized Styling
-- **Uniform Input Controls**: Designed an accessible contact form styling name, email, and description fields using Bootstrap's native `.form-control` and `.form-label` properties.
-- **Custom Branding**: Developed an external `style.css` override declaring a primary deep navy blue theme (`.rumi-bg-dark` / `#1a2b4c`) representing Rumi House branding, alongside warning styling (`.error-text`) for user validation.
+### 🔍 3. Interactive Search & Category Filtering
+- **Live Text Search**: Search societies in real-time by entering terms. Filters update the cards on each keystroke (case-insensitive checks matching society names and descriptions).
+- **Directory Categories**: Category filter buttons (Literary, Sports, Social, Technical, Arts) dynamically restrict displayed societies.
+- **Empty States**: If a search or filter term has no matching societies or events, a custom dashed empty state card displays descriptive feedback ("No Societies Found").
+- **Timeline State Filters**: Events can be filtered via toggle buttons into "Upcoming Activities" and "Past Memories".
 
-### 🧠 Task 4: JavaScript Logic & State Management
-- **Variables & Scopes**: Applied modern variable declarations (`const` for stable DOM references/static lists, `let` for reactive layout states).
-- **Data Types**: Demonstrated usage of multiple native JS data structures including Strings, Arrays (for hex color lists), Booleans (validity checks), and structured Objects (dynamic JSON data).
-- **Control Flow**: Managed system operations using strict equality checking (`===`), logical conjunctions (`&&`), negations (`!`), standard conditional structures (`if-else`), and modern iterator loops (`.forEach`).
+### 📋 4. Dynamic Bootstrap Modals
+- **Society Quick View**: Inject details dynamically into the Society Modal, including description, Faculty Patron, coordinator names, leads, and active member headcount.
+- **Membership Request**: The "Send Membership Request" button on the modal disables itself, updates headcounts dynamically, and shows success alerts.
+- **News Article Reader**: News summaries on cards open fully inside a dynamic preview reader, converting raw line breaks into readable paragraphs.
 
-### 🖱️ Task 5: DOM Manipulation & Event Handlers
-- **Event Listeners**: Separated script rules clean from markup components by wiring actions exclusively using `.addEventListener()` hooks.
-- **Reactive UI Changes**: Clicking the "Discover Our Vision" button triggers dynamic style modifications by switching CSS display modes between `none` and `block`, while simultaneously updating button action texts.
-- **Form Control**: Intercepts form submissions using `preventDefault()`, analyzing values, and dynamically rendering targeted validation messages underneath input fields.
+### 🛡️ 5. Form Validation
+- **Contact Inquiries**: Validates Name (min 3 chars), Namal Student Email (`@namal.edu.pk`), Registration Number (`NUM-BSCS-2022-41`), Subject selection, and Message contents (min 10 chars).
+- **RSVP Verification**: Inside the event modal, validates verified student emails and registration IDs before permitting registrations.
+- **Dynamic CSS Indicators**: Fields actively validate on keystroke, applying Bootstrap's `.is-valid` and `.is-invalid` borders alongside green checkmarks or red warning texts.
+- **Success & Fail Overlays**: Shows clean alerts when submissions succeed, automatically fading out after 4 seconds.
 
-### ⚡ Task 6: Modern ES6+ Syntax & Theme Customizer
-- **Modern Syntaxes**: Clean codebase entirely free of deprecated `var` and `function` tags. Arrow functions `() => {}` are used for all callbacks, and template literals (backticks + `${}`) drive string building.
-- **Theme Randomizer**: Built a live color customizer clicking the "Change House Theme Color" button. It picks a random index from a custom Hex color array using `Math.random()` and applies the styling dynamically via the `element.style.backgroundColor` DOM attribute.
-
-### 🌐 Task 7: Asynchronous API & Error Handling
-- **API Fetching**: Loaded campus society cards asynchronously from a local `data.json` database file using the standard `fetch()` API and `async/await` syntax.
-- **Asynchronous States**: Displays a responsive Bootstrap `.spinner-border` loading indicator during active database connection requests and hides it upon render.
-- **Defensive Error Handling**: Wrapped the API pipeline inside a safe `try...catch` block. If file loads fail, the system safely catches the exception and prints a clean Bootstrap `.alert-danger` banner to protect the UI.
+### 📲 6. External QR Server API Integration
+- **Registration headcount**: RSVP submissions dynamically increment registration capacities.
+- **Attendance Check-in QR**: Generates unique attendance verification barcodes by passing the event ID and a secure, random student token directly to the free QR Server API:
+  `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=eventId=${id}%26token=${token}`
+- **Venue instructions**: Fades out form fields, displays a loading spinner while generating the QR image, and presents the scanned attendance instructions at the physical door.
 
 ---
 
@@ -71,24 +66,24 @@ Upgraded from static HTML5/CSS3 to a fully interactive and responsive web applic
 
 ```text
 Assignment-2_Rumi-House-Hub/
-├── index.html                  # Core HTML structure
-├── style.css                   # Overriding custom CSS
-├── script.js                   # Application interactivity logic
-├── data.json                   # Local data storage database
-├── Assignment_2_Report.docx    # Word document report
-├── README.md                   # This documentation file
-└── screenshots/
-    ├── 01_header_navbar_vision.png  # Header navigation and collapsed panel
-    ├── 02_dynamic_societies.png     # Rendered cards loaded from JSON
-    └── 03_contact_validation.png    # Validation error responses
+├── index.html                  # Main application structure with Bootstrap layout and modal shells
+├── style.css                   # Custom stylesheets, variables, and Bootstrap UI overrides
+├── script.js                   # Interactive client-side logic, validations, and API fetch
+├── data.json                   # Local dataset containing societies, upcoming/past events, and news
+├── Assignment_2_Report.docx    # Academic document report
+└── README.md                   # This documentation file
 ```
 
 ---
 
-## 🛠️ How to Run Locally
+## 🛠️ How to Run and Test Locally
 
-1. Ensure all files (`index.html`, `style.css`, `script.js`, `data.json`) are stored together in the same directory.
-2. Double-click the `index.html` file to open it in a modern browser (Chrome, Edge, Firefox).
-3. To view the dynamic JSON fetching feature:
-   - Since modern browsers block local `fetch()` calls from `file:///` URLs due to CORS policies, run the folder using a local development server (like VS Code's **Live Server** extension, or `npx serve .`, or python's `python -m http.server`).
-   - Click the **"Load Societies"** button to fetch and render the cards dynamically!
+1. **Standard Launch (Direct browser double-click)**:
+   - Double-click `index.html` to open the portal in any browser.
+   - The application detects the `file://` protocol and automatically boots using the fallback local dataset. All searches, modals, forms, and the external QR Generator work seamlessly.
+2. **Web Server Launch (Fetch API execution)**:
+   - Run the directory using a local development server (e.g. VS Code **Live Server** extension, or `npx serve .`, or `python -m http.server`).
+   - The script will execute a standard `fetch('./data.json')` request to load the card grids.
+3. **Interactive Validation Tests**:
+   - Go to the **Contact** form. Try typing an email without `@namal.edu.pk` or an ID that doesn't fit `NUM-BSCS-2022-41`. Watch the active green/red CSS feedback borders and text triggers.
+   - Click "RSVP & Attend" on an upcoming event card. Enter credentials and click "Confirm RSVP". Note the headcount incrementing, the form fading away, and the check-in QR code generating with helper instructions.
