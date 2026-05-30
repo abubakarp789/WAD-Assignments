@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events Schedule - Rumi House Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 1. Header & Navigation -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <div class="logo-wrapper">
+        <div class="logo-icon">R</div>
+        <div class="logo-text">RumiHouse<span>Hub</span></div>
+      </div>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="societies.html" class="nav-link">Societies</a></li>
+          <li><a href="events.html" class="nav-link active">Events</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-auth">
+        <a href="login.html" class="btn btn-secondary">Log In</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h1>Campus Events Schedule</h1>
+      <p>Stay informed about the upcoming seminars, workshops, sports galas, and cultural sessions happening across the Namal University campus.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+
+      <!-- 3. State Filters -->
+      <section class="filter-bar" aria-label="Event State Filters">
+        <ul class="filter-tabs">
+          <li><button class="filter-tab-btn active">All Activities</button></li>
+          <li><button class="filter-tab-btn">Upcoming</button></li>
+          <li><button class="filter-tab-btn">Past Highlights</button></li>
+        </ul>
+        
+        <div class="search-box">
+          <input type="text" placeholder="Search events..." class="search-input" aria-label="Search events">
+        </div>
+      </section>
+
+      <!-- 4. Chronological Timeline -->
+      <section class="timeline-container" aria-label="Chronological Timeline">
+        
+        <!-- Timeline Event 1: Sports Gala -->
+        <div class="timeline-event-wrapper">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date-label">Upcoming — June 15, 2026</div>
+          
+          <article class="event-list-card">
+            <div class="event-list-card-media">
+              <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="background: var(--namal-green-dark); display: block;">
+                <rect width="100%" height="100%" fill="none" stroke="rgba(255,255,255,0.1)"/>
+                <circle cx="50" cy="50" r="25" fill="none" stroke="var(--namal-gold)" stroke-width="2"/>
+                <text x="50" y="55" fill="var(--white)" font-family="Outfit" font-size="10" text-anchor="middle" font-weight="700">SPORTS</text>
+              </svg>
+            </div>
+            <div class="event-list-card-info">
+              <span class="badge badge-sports">Sports</span>
+              <h3>Annual Inter-House Sports Gala</h3>
+              <p>Prepare yourself for the ultimate athletic clash at Namal University. Watch Rumi House athletes battle across field sports, boating, and indoor board games to claim the championship cup.</p>
+              
+              <div class="event-list-card-meta">
+                <span>Venue: <strong>Sports Complex</strong></span>
+                <span>Time: <strong>09:00 AM - 05:00 PM</strong></span>
+                <span>Capacity: <strong>100 Seats</strong></span>
+              </div>
+              
+              <div style="margin-top: 20px;">
+                <a href="event-detail.html" class="btn btn-primary">View Details &amp; RSVP</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Timeline Event 2: Rumi Literary Night -->
+        <div class="timeline-event-wrapper">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date-label">Upcoming — June 10, 2026</div>
+          
+          <article class="event-list-card">
+            <div class="event-list-card-media">
+              <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="background: var(--namal-green-dark); display: block;">
+                <rect width="100%" height="100%" fill="none" stroke="rgba(255,255,255,0.1)"/>
+                <polygon points="50,20 80,80 20,80" fill="none" stroke="var(--namal-gold)" stroke-width="2"/>
+                <text x="50" y="65" fill="var(--white)" font-family="Outfit" font-size="10" text-anchor="middle" font-weight="700">LITERARY</text>
+              </svg>
+            </div>
+            <div class="event-list-card-info">
+              <span class="badge badge-cultural">Cultural</span>
+              <h3>Rumi Literary Night</h3>
+              <p>An evening celebrating creative writing, student poetry, and theatrical performances organized under the Rumi House central umbrella.</p>
+              
+              <div class="event-list-card-meta">
+                <span>Venue: <strong>Main Auditorium</strong></span>
+                <span>Time: <strong>06:00 PM - 09:00 PM</strong></span>
+                <span>Capacity: <strong>200 Seats</strong></span>
+              </div>
+              
+              <div style="margin-top: 20px;">
+                <a href="event-detail.html" class="btn btn-primary">View Details &amp; RSVP</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Timeline Event 3: Debate Workshop -->
+        <div class="timeline-event-wrapper">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date-label">Upcoming — June 02, 2026</div>
+          
+          <article class="event-list-card">
+            <div class="event-list-card-media">
+              <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="background: var(--namal-green-dark); display: block;">
+                <rect width="100%" height="100%" fill="none" stroke="rgba(255,255,255,0.1)"/>
+                <circle cx="50" cy="50" r="25" fill="none" stroke="var(--namal-gold)" stroke-width="2"/>
+                <text x="50" y="55" fill="var(--white)" font-family="Outfit" font-size="10" text-anchor="middle" font-weight="700">DEBATE</text>
+              </svg>
+            </div>
+            <div class="event-list-card-info">
+              <span class="badge badge-cultural">Cultural</span>
+              <h3>Debate Skills Workshop</h3>
+              <p>Learn structured argumentation, public speaking tips, and confidence skills from veteran debate coordinators.</p>
+              
+              <div class="event-list-card-meta">
+                <span>Venue: <strong>Auditorium Lobby</strong></span>
+                <span>Time: <strong>04:00 PM - 06:00 PM</strong></span>
+                <span>Capacity: <strong>50 Seats</strong></span>
+              </div>
+              
+              <div style="margin-top: 20px;">
+                <a href="event-detail.html" class="btn btn-primary">View Details &amp; RSVP</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Timeline Event 4: Newsletter Editorial Meetup -->
+        <div class="timeline-event-wrapper">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date-label">Upcoming — May 31, 2026</div>
+          
+          <article class="event-list-card">
+            <div class="event-list-card-media">
+              <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="background: var(--namal-green-dark); display: block;">
+                <rect width="100%" height="100%" fill="none" stroke="rgba(255,255,255,0.1)"/>
+                <rect x="25" y="25" width="50" height="50" fill="none" stroke="var(--namal-gold)" stroke-width="2"/>
+                <text x="50" y="55" fill="var(--white)" font-family="Outfit" font-size="10" text-anchor="middle" font-weight="700">NEWS</text>
+              </svg>
+            </div>
+            <div class="event-list-card-info">
+              <span class="badge badge-technical">Technical</span>
+              <h3>Newsletter Editorial Meetup</h3>
+              <p>Editorial planning session for compiling student co-curricular reports and delegation highlights for the upcoming newsletter.</p>
+              
+              <div class="event-list-card-meta">
+                <span>Venue: <strong>Rumi Council Room</strong></span>
+                <span>Time: <strong>03:00 PM - 04:30 PM</strong></span>
+                <span>Capacity: <strong>15 Seats</strong></span>
+              </div>
+              
+              <div style="margin-top: 20px;">
+                <a href="event-detail.html" class="btn btn-primary">View Details &amp; RSVP</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Timeline Event 5: NEC Plantation Drive -->
+        <div class="timeline-event-wrapper">
+          <div class="timeline-dot" style="border-color: var(--text-muted); box-shadow: none;"></div>
+          <div class="timeline-date-label" style="color: var(--text-muted);">Completed — May 18, 2026</div>
+          
+          <article class="event-list-card" style="opacity: 0.8;">
+            <div class="event-list-card-media">
+              <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="background: var(--namal-green-dark); display: block;">
+                <rect width="100%" height="100%" fill="none" stroke="rgba(255,255,255,0.1)"/>
+                <rect x="30" y="30" width="40" height="40" fill="none" stroke="var(--namal-gold)" stroke-width="2"/>
+                <text x="50" y="55" fill="var(--white)" font-family="Outfit" font-size="10" text-anchor="middle" font-weight="700">NEC</text>
+              </svg>
+            </div>
+            <div class="event-list-card-info">
+              <span class="badge badge-social">Social</span>
+              <h3>Green Namal: Spring Plantation Drive</h3>
+              <p>The Environmental Club executed the first plantation drive of the semester. Students and local coordinators planted over 300 tree samplings across the south campus perimeter.</p>
+              
+              <div class="event-list-card-meta">
+                <span>Venue: <strong>Campus South Sector</strong></span>
+                <span>Status: <strong style="color: var(--namal-green);">Finished</strong></span>
+                <span>Registrations: <strong>142 Students</strong></span>
+              </div>
+              
+              <div style="margin-top: 20px;">
+                <a href="event-detail.html" class="btn btn-secondary">Review Event Highlights</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- 5. Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4>RumiHouse<span>Hub</span></h4>
+        <p>The centralized digital co-curricular activity and engagement portal of Namal University, Mianwali.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="societies.html">Societies</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Course Information</h5>
+        <ul>
+          <li><strong>Course:</strong> CS-370 WAD</li>
+          <li><strong>Instructor:</strong> Ammar Ahmad Khan</li>
+          <li><strong>Student:</strong> Abu Bakar</li>
+          <li><strong>Roll No:</strong> NUM-BSCS-2022-41</li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h5>Rumi House Desk</h5>
+        <p><strong>Chief Patron</strong></p>
+        <p>Namal University Campus, Talagang Road, Mianwali.</p>
+        <p>Email: <strong>rumi.desk@namal.edu.pk</strong></p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Rumi House Hub. All rights reserved. Prepared for CS-370 Web Application Development.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-icon" aria-label="Facebook">Fb</a>
+        <a href="#" class="social-icon" aria-label="Twitter">Tw</a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">In</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

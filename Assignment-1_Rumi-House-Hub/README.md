@@ -1,71 +1,78 @@
 # Rumi House Hub — WAD Assignment 1
 
-A student engagement portal for **Rumi House** at Namal University, Mianwali.  
-Built with **pure HTML5** and an **external CSS** file — no frameworks or JavaScript.
+A centralized student co-curricular engagement portal for **Rumi House** at Namal University, Mianwali.  
+Built with **pure HTML5** and a single **external CSS3** style sheet — engineered without frameworks or JavaScript logic to build a responsive, accessible, and elegant visual prototype.
 
 ---
 
 ## 🎓 Academic Details
 
 | Field | Detail |
-|---|---|
-| **Course** | Web Application Development (WAD) |
-| **Department** | Department of Computer Science |
+| :--- | :--- |
+| **Course** | Web Application Development (WAD) — CS-370 |
 | **Institution** | Namal University, Mianwali |
 | **Instructor** | Ammar Ahmad Khan |
 | **Student Name** | Abu Bakar |
 | **Roll Number** | NUM-BSCS-2022-41 |
-| **Due Date** | 20-March-2026 |
+| **Phase / Assignment** | Assignment 1 — Pure HTML & CSS Static Prototype |
 
 ---
 
-## 📸 Visual Previews
+## 🎨 Brand Color Sourcing & Academic Honesty
 
-### 1. Header & Hero Section
-![Header and Hero Section](screenshots/01_header_hero.png)
+The visual system is designed around a **Namal-inspired academic branding palette** optimized for clean, high-contrast readability. 
 
-### 2. About Me & Societies 3x3 Grid
-![About and Societies Grid](screenshots/02_about_societies.png)
+To maintain academic honesty:
+* The gold accent color (`#f5c400` / `#d9a900`) and green primary accents (`#006b35` / `#005128`) are **project-level custom selections** designed to visually harmonize with your existing Namal GPA Calculator styling and the university's environmental and co-curricular spirit. They are not represented as verified official brand colors.
+* All layout surfaces, white card spaces, and soft moss shadows are tailored to deliver a cohesive, modern, and highly professional student-council dashboard feel.
 
-### 3. Events Schedule Table & Spotlight
-![Events Schedule](screenshots/03_events_table.png)
+---
 
-### 4. Membership / Registration Form
-![Registration Form](screenshots/04_registration_form.png)
+## 📸 Visual Previews (New Retaken Screenshots)
 
-### 5. Multimedia Player & Footer
-![Multimedia and Footer](screenshots/05_multimedia_footer.png)
+The portal views have been captured to display the light-mode green and gold academic branding styles:
+
+### 1. Landing Portal Hero (`index.html`)
+![Landing Portal Hero](screenshots/01_header_hero.png)
+
+### 2. Clubs & Societies Directory (`societies.html`)
+![Clubs & Societies Directory](screenshots/02_about_societies.png)
+
+### 3. Events Timeline Calendar (`events.html`)
+![Events Timeline Calendar](screenshots/03_events_table.png)
+
+### 4. Society Profile Detail — NEC (`society-detail.html`)
+![Society Profile Detail](screenshots/04_registration_form.png)
+
+### 5. Event Specifications & Mock RSVP (`event-detail.html`)
+![Event Specifications & Mock RSVP](screenshots/05_multimedia_footer.png)
+
+### 6. Newsletter & Publications Archives (`news.html`)
+![Newsletter & Publications Archives](screenshots/06_news_archive.png)
 
 ---
 
 ## 🚀 Key Implemented Features
 
-### 📋 Task 1 — HTML Structure
-- Semantic HTML5 tags utilized throughout (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`, `<figure>`, `<address>`).
-- Complete `<head>` meta configuration including `charset`, `viewport`, `description`, and `keywords`.
-- Strict heading hierarchy (`h1`–`h4`), clear paragraphs, descriptive alt texts for images, and standard keyboard-accessible anchor links.
+### 📋 Page Directory Structure
+The Assignment 1 static prototype is organized into **six complete web pages** fully cross-linked:
+1. **Home (`index.html`)**: Features a clean green hero banner with gold CTA buttons, followed by Rumi House core vision text, metric cards, and a preview of recent publications.
+2. **Societies (`societies.html`)**: A comprehensive directory listing cards for all **5 Rumi House internal clubs** and **6 major university societies** using responsive CSS grids.
+3. **Society Detail (`society-detail.html`)**: Dedicated sample profile for the *Namal Environmental Club* (NEC) listing objectives, executive body roles using **neutral coordinator labels**, and upcoming events.
+4. **Events (`events.html`)**: A vertical chronological timeline organizing upcoming activities (Sports Gala, Literary Night, Debate Workshop, Meetup) and past events.
+5. **Event Detail (`event-detail.html`)**: In-depth review of the *Annual Inter-House Sports Gala* showcasing venue specifications, a CSS registration tracker bar, and a mock QR attendance check-in card showing fallback token `RUMI-8893-X`.
+6. **News (`news.html`)**: Magazine layout showcasing newsletter archives, alerts, and Rumi editorial board descriptions.
+7. **Auxiliary skeletons (`login.html` & `register.html`)**: Auth panels validating email domains (`@namal.edu.pk` matches) and registration number patterns.
 
-### ⚙️ Task 2 — Content Elements
-- **Membership Form**: Implemented all **8 required input types** (`text`, `email`, `password`, `checkbox`, `radio`, `date`, `file`, `submit`) with clean accessible `<label>` wrappers and styled grids.
-- **Events Table**: A fully structured table featuring `<thead>`, `scope="col"` attributes, and `<time>` tags for machine-readable dates.
-- **Lists**:
-  - *Ordered List*: A 6-step roadmap detailing "Steps to Register".
-  - *Unordered List*: A 6-item list summarizing the "Benefits of Joining Societies".
-- **Multimedia Controls**: Built-in native `<audio>` and `<video>` tags referencing local WAV and MP4 samples with modern controls and fallback messages.
-- **Accessibility features**: Associated label tags, ARIA attributes, semantic markup, and a fully functional "Skip-to-content" bypass link.
+### 🎨 Semantic Markup & Clean Styling (CSS3 Box Model)
+* Designed utilizing strict HTML5 semantic structural tags (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`).
+* Maintained total separation of concerns using a single external style sheet (`styles.css`) configured with dynamic root CSS variables.
+* Demonstrated rigorous CSS Box Model applications (`margin`, `padding`, `border`, `width`, `height`, and `box-sizing: border-box`).
 
-### 🎨 Task 3 — CSS Styling & Box Model
-- Full separation of concerns using an **external stylesheet** (`styles.css`).
-- Utilization of diverse selector patterns: element selectors, custom class definitions, unique ID references, grouping rules, pseudo-classes (`:hover`, `:focus-visible`, `:nth-child`), and pseudo-elements (`::before`, `::first-line`).
-- Rigorous demonstration of the **CSS Box Model** utilizing `margin`, `padding`, `border`, `width`, `height`, and `box-sizing: border-box`.
-
-### 📱 Task 4 — Layout & Responsiveness
-- **Flexbox Layouts**: Used to align navigation links, structure header bars, organize two-column schedules, and distribute footer columns.
-- **CSS Grid Layouts**: Implemented for the 3×3 society showcases, hero layout splits, and side-by-side form controls.
-- **Media Queries**: Fully responsive layouts operating smoothly across three custom breakpoints:
-  - `Mobile` (≤ 600px): Stacked structures and optimized text sizing.
-  - `Tablet` (601px - 991px): Hybrid columns and customized forms.
-  - `Desktop` (≥ 992px): Multi-column grids and wide displays.
+### 📱 Grid / Flexbox Layouts & Responsiveness
+* **Flexbox Rules**: Power the navigation headers, brand logos, specifications cells, and structured footer lists.
+* **CSS Grid Rules**: Power the societies directories, spotlight hero sections, and newsletter layouts.
+* **Media Breakpoints**: Custom responsive queries at `768px` and `992px` ensure grid decks stack smoothly, preventing any horizontal scrolling down to 375px mobile viewports.
 
 ---
 
@@ -73,27 +80,32 @@ Built with **pure HTML5** and an **external CSS** file — no frameworks or Java
 
 ```text
 Assignment-1_Rumi-House-Hub/
-├── index.html                     # Core HTML webpage
-├── styles.css                     # External CSS styles
+├── index.html                     # Central landing page
+├── societies.html                 # Societies grid directory
+├── society-detail.html            # Namal Environmental Club profile
+├── events.html                    # Chronological events calendar
+├── event-detail.html              # Inter-House Sports Gala details
+├── news.html                      # Rumi newsletter archives
+├── login.html                     # Auth credential mock page
+├── register.html                  # Account registration mock page
+├── styles.css                     # Central CSS style sheet
 ├── WAD_Assignment1_Report.docx    # Word document report
 ├── README.md                      # This documentation file
-├── media/
-│   ├── logo.svg                   # Brand Hexagon Logo
-│   ├── hero.svg                   # Hero Illustration
-│   ├── rumi-intro.wav             # WAV Audio Sample (5s)
-│   └── rumi-tour.mp4              # MP4 Video Sample (5s)
+├── media/                         # Local SVGs, lightweight assets
 └── screenshots/
-    ├── 01_header_hero.png         # Screenshot of the Hero Section
-    ├── 02_about_societies.png     # Screenshot of the 3x3 Grid
-    ├── 03_events_table.png        # Screenshot of the Event Table
-    ├── 04_registration_form.png   # Screenshot of the Form Fields
-    └── 05_multimedia_footer.png   # Screenshot of the Audio/Video & Footer
+    ├── 01_header_hero.png         # Screenshot of Home Landing page
+    ├── 02_about_societies.png     # Screenshot of Societies Directory
+    ├── 03_events_table.png        # Screenshot of Events timeline
+    ├── 04_registration_form.png   # Screenshot of Club Profile Detail
+    ├── 05_multimedia_footer.png   # Screenshot of Event Specifications
+    └── 06_news_archive.png        # Screenshot of News Archives page
 ```
 
 ---
 
-## 🛠️ How to Run Locally
+## 🛠️ How to Open & Test Locally
 
-1. Open the project folder in your filesystem.
-2. Double-click the `index.html` file to open it directly in any modern web browser.
-3. No server or compilation steps required — pure, standard HTML5 & CSS3.
+1. Open the project directory in your local filesystem.
+2. Double-click the `index.html` file to open it instantly in any web browser.
+3. Use the header menu or action buttons to navigate seamlessly across all pages.
+4. Scale your browser window or use DevTools simulation to verify mobile-responsive card stacking.

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Specifications - Rumi House Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 1. Header & Navigation -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <div class="logo-wrapper">
+        <div class="logo-icon">R</div>
+        <div class="logo-text">RumiHouse<span>Hub</span></div>
+      </div>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="societies.html" class="nav-link">Societies</a></li>
+          <li><a href="events.html" class="nav-link active">Events</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-auth">
+        <a href="login.html" class="btn btn-secondary">Log In</a>
+        <a href="register.html" class="btn btn-primary">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <div style="margin-bottom: 16px;">
+        <a href="events.html" style="color: var(--namal-gold); font-size: 0.95rem; font-weight: 600;">&larr; Back to Calendar</a>
+      </div>
+      <h1>Event Specifications</h1>
+      <p>Complete details, structural timing, location properties, and RSVP status metrics for selected campus activities.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      
+      <!-- 3. Detail Grid Layout -->
+      <div class="event-detail-grid">
+        
+        <!-- Left Column: Core Specifications & Details -->
+        <section class="event-main-profile" aria-labelledby="event-title">
+          <div class="event-header-block">
+            <span class="badge badge-sports" style="margin-bottom: 12px;">Sports</span>
+            <h1 id="event-title">Annual Inter-House Sports Gala</h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Organized by the <strong>Sports &amp; Adventure Club</strong> in collaboration with Rumi House.</p>
+          </div>
+
+          <div class="event-description-block">
+            <h3>Activity Overview</h3>
+            <p>The Annual Inter-House Sports Gala ensures that all students, regardless of gender, take part in physical drills and recreational sports through inter-house matches and competitions, helping them balance academics with physical wellbeing. Rumi House works in active collaboration with house masters to organize the boating trips, trekking expeditions, and field sports that highlight the academic year.</p>
+            
+            <p>Athletes from Rumi House will compete in running sprints, indoor chess tournaments, archery matches, and the iconic Indus River boating sprint. Gold points accumulated in these segments will determine the final semester house sports trophy.</p>
+          </div>
+
+          <!-- Event Specifications Card Grid -->
+          <div class="event-spec-card">
+            <div class="spec-cell">
+              <span>Venue</span>
+              <strong>Sports Complex</strong>
+            </div>
+            <div class="spec-cell">
+              <span>Date</span>
+              <strong>June 15, 2026</strong>
+            </div>
+            <div class="spec-cell">
+              <span>Timing</span>
+              <strong>09:00 AM - 05:00 PM</strong>
+            </div>
+            <div class="spec-cell">
+              <span>Faculty Coordinator</span>
+              <strong>Society Coordinator</strong>
+            </div>
+            <div class="spec-cell">
+              <span>Executive Lead</span>
+              <strong>Student Lead</strong>
+            </div>
+            <div class="spec-cell">
+              <span>Total Capacity</span>
+              <strong>100 Seats Limit</strong>
+            </div>
+          </div>
+
+          <!-- Related Society Section -->
+          <div style="margin-top: 40px; border-top: 1px solid var(--border-soft); padding-top: 30px;">
+            <h3 style="font-size: 1.25rem; color: var(--namal-green-dark); margin-bottom: 16px;">Hosting Club Profile</h3>
+            <div class="card" style="padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+              <div>
+                <h4 style="color: var(--namal-green-dark); margin-bottom: 4px;">Namal Sports &amp; Adventure Club</h4>
+                <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 500px;">Ensuring active drills, athletics, boating, and inter-house matches to balance academic excellence with physical health.</p>
+              </div>
+              <a href="society-detail.html" class="btn btn-secondary btn-sm">View Club Profile</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Right Column: RSVP Actions & Mock QR Attendance Widget -->
+        <aside class="rsvp-sidebar-card" aria-labelledby="rsvp-title">
+          <h3 id="rsvp-title">RSVP &amp; Attendance</h3>
+          
+          <!-- Capacity Tracker -->
+          <div class="capacity-tracker">
+            <div class="capacity-labels">
+              <span>Registrations</span>
+              <span><strong>45</strong> / 100 Seats</span>
+            </div>
+            <div class="capacity-bar-wrapper">
+              <div class="capacity-bar-fill"></div>
+            </div>
+          </div>
+
+          <!-- RSVP Action Buttons -->
+          <div class="rsvp-actions">
+            <button class="btn btn-primary btn-full" style="text-align: center;">Register (Going)</button>
+            <button class="btn btn-secondary btn-full" style="text-align: center;">Interested</button>
+          </div>
+
+          <!-- Mock Check-in Attendance Widget -->
+          <div class="mock-qr-widget">
+            <h4 style="font-size: 0.95rem; margin-bottom: 8px; font-family: 'Outfit'; color: var(--namal-green-dark);">Attendance Check-in Code</h4>
+            <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 16px;">Scan your unique QR code at the venue or present the fallback code below to verify attendance.</p>
+            
+            <div class="mock-qr-placeholder">
+              <!-- Inline SVG representing QR barcode mock -->
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" style="width: 44px; height: 44px;">
+                <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor"/>
+                <rect x="6" y="6" width="4" height="4" fill="currentColor"/>
+                <rect x="14" y="6" width="4" height="4" fill="currentColor"/>
+                <rect x="6" y="14" width="4" height="4" fill="currentColor"/>
+                <rect x="14" y="14" width="2" height="2" fill="currentColor"/>
+                <rect x="16" y="16" width="2" height="2" fill="currentColor"/>
+              </svg>
+              <span style="font-weight: 600; margin-top: 8px;">Scan QR Code</span>
+            </div>
+
+            <div class="mock-qr-code-text">RUMI-8893-X</div>
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 4. Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4>RumiHouse<span>Hub</span></h4>
+        <p>The centralized digital co-curricular activity and engagement portal of Namal University, Mianwali.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="societies.html">Societies</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Course Information</h5>
+        <ul>
+          <li><strong>Course:</strong> CS-370 WAD</li>
+          <li><strong>Instructor:</strong> Ammar Ahmad Khan</li>
+          <li><strong>Student:</strong> Abu Bakar</li>
+          <li><strong>Roll No:</strong> NUM-BSCS-2022-41</li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h5>Rumi House Desk</h5>
+        <p><strong>Chief Patron</strong></p>
+        <p>Namal University Campus, Talagang Road, Mianwali.</p>
+        <p>Email: <strong>rumi.desk@namal.edu.pk</strong></p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Rumi House Hub. All rights reserved. Prepared for CS-370 Web Application Development.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-icon" aria-label="Facebook">Fb</a>
+        <a href="#" class="social-icon" aria-label="Twitter">Tw</a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">In</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Rumi House Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 1. Header & Navigation -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <div class="logo-wrapper">
+        <div class="logo-icon">R</div>
+        <div class="logo-text">RumiHouse<span>Hub</span></div>
+      </div>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="societies.html" class="nav-link">Societies</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="news.html" class="nav-link">News</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-auth">
+        <a href="login.html" class="btn btn-secondary">Log In</a>
+        <a href="register.html" class="btn btn-primary active">Register</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="min-height: calc(100vh - 280px); display: flex; align-items: center; padding: 60px 0;">
+    <div class="container" style="max-width: 520px;">
+      
+      <!-- Register Panel -->
+      <section class="card" style="padding: 40px;" aria-labelledby="register-form-title">
+        <h2 id="register-form-title" style="font-size: 1.75rem; margin-bottom: 8px; text-align: center; color: var(--namal-green-dark);">Register Account</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 32px;">Create an account to join societies and RSVP for upcoming events.</p>
+        
+        <form>
+          <div class="form-group">
+            <label for="reg-name">Full Name</label>
+            <input type="text" id="reg-name" class="form-control" placeholder="Abu Bakar" required>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-email">Namal Student Email</label>
+            <input type="email" id="reg-email" class="form-control" placeholder="username@namal.edu.pk" required>
+            <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 6px;">Only @namal.edu.pk email addresses are accepted.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-number">Registration Number</label>
+            <input type="text" id="reg-number" class="form-control" placeholder="NUM-BSCS-2022-41" required>
+            <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 6px;">Format must match: NUM-[DEPT]-[YEAR]-[ID]</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label for="reg-dept">Department</label>
+              <input type="text" id="reg-dept" class="form-control" placeholder="BSCS" required>
+            </div>
+            <div class="form-group">
+              <label for="reg-batch">Batch Year</label>
+              <input type="text" id="reg-batch" class="form-control" placeholder="2022" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" class="form-control" placeholder="••••••••" required>
+          </div>
+
+          <button type="submit" class="btn btn-green btn-full" style="text-align: center; margin-top: 32px; padding: 12px;">Create Account</button>
+        </form>
+
+        <div style="margin-top: 24px; text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+          <span>Already have an account? </span>
+          <a href="login.html" style="color: var(--namal-green); font-weight: 600;">Log In here</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4>RumiHouse<span>Hub</span></h4>
+        <p>The centralized digital co-curricular activity and engagement portal of Namal University, Mianwali.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="societies.html">Societies</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Course Information</h5>
+        <ul>
+          <li><strong>Course:</strong> CS-370 WAD</li>
+          <li><strong>Instructor:</strong> Ammar Ahmad Khan</li>
+          <li><strong>Student:</strong> Abu Bakar</li>
+          <li><strong>Roll No:</strong> NUM-BSCS-2022-41</li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h5>Rumi House Desk</h5>
+        <p><strong>Chief Patron</strong></p>
+        <p>Namal University Campus, Talagang Road, Mianwali.</p>
+        <p>Email: <strong>rumi.desk@namal.edu.pk</strong></p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Rumi House Hub. All rights reserved. Prepared for CS-370 Web Application Development.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-icon" aria-label="Facebook">Fb</a>
+        <a href="#" class="social-icon" aria-label="Twitter">Tw</a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">In</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
